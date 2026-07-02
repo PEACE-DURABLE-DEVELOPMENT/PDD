@@ -1,0 +1,410 @@
+import Link from "next/link";
+import SmartImage from "@/components/SmartImage";
+import { ArrowRight } from "lucide-react";
+import { cookies } from "next/headers";
+import { translations } from "@/lib/translations";
+
+export default async function Home() {
+  const cookieStore = await cookies();
+  const lang = (cookieStore.get("lang")?.value || "en") as "en" | "fr";
+  const t = translations[lang];
+
+
+
+  const projectsList = [
+    {
+      id: "peace",
+      title: t.projects.items.peace.title.split('(')[0].trim(),
+      image: "/peace.webp",
+      summary: t.projects.items.peace.short,
+    },
+    {
+      id: "fsca",
+      title: t.projects.items.fsca.title.split('(')[0].trim(),
+      image: "/cons.webp",
+      summary: t.projects.items.fsca.short,
+    },
+    {
+      id: "rights",
+      title: t.projects.items.rights.title.split('(')[0].trim(),
+      image: "/human.webp",
+      summary: t.projects.items.rights.short,
+    },
+    {
+      id: "poverty",
+      title: t.projects.items.poverty.title,
+      image: "/pover.webp",
+      summary: t.projects.items.poverty.short,
+    },
+    {
+      id: "water",
+      title: t.projects.items.water.title,
+      image: "/fill.webp",
+      summary: t.projects.items.water.short,
+    },
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative w-full h-[80vh] min-h-[600px] flex items-center">
+        <div className="absolute inset-0 z-0">
+          <SmartImage
+            cloudinaryUrl="/hero.webp"
+            label="Hero — community members or agricultural beneficiaries working together"
+            aspectRatio="16/9"
+            className="w-full h-full object-cover rounded-none"
+          />
+          <div className="absolute inset-0 bg-black/80 z-10" />
+        </div>
+        
+        <div className="container mx-auto px-4 relative z-20">
+          <div className="max-w-5xl mx-auto text-center">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+              <span className="block text-yellow-400">{t.home.heroTitle1}</span>
+              <span className="block text-white">{t.home.heroTitle2}</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-slate-200 mb-8 max-w-5xl mx-auto leading-relaxed">
+              <span className="block">{t.home.heroSub1}</span>
+              <span className="block">{t.home.heroSub2}</span>
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/projects"
+                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-8 py-4 rounded-full font-semibold text-lg text-center transition-all shadow-sm"
+              >
+                {t.home.ourProjects}
+              </Link>
+              <Link
+                href="/contact"
+                className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-8 py-4 rounded-full font-semibold text-lg text-center transition-all shadow-sm"
+              >
+                {t.common.supportWork}
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Are */}
+      <section className="py-24 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Image Side */}
+            <div className="relative max-w-sm lg:max-w-md mx-auto w-full">
+              <div className="absolute -inset-4 bg-yellow-400/20 rounded-[3rem] transform -rotate-3 z-0"></div>
+              <div className="relative z-10 w-full aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
+                <SmartImage
+                  cloudinaryUrl="/boy.webp"
+                  label="A young boy representing the future of Rwanda"
+                  aspectRatio="4/5"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
+                />
+              </div>
+            </div>
+            
+            {/* Content Side */}
+            <div className="flex flex-col items-start text-left">
+              <span className="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-600 font-bold text-sm mb-6 uppercase tracking-wider">
+                {t.home.whoWeAreBadge}
+              </span>
+              <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 leading-tight">
+                {t.home.whoWeAreTitle}<span className="text-yellow-500">{t.home.whoWeAreTitleAccent}</span>
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed mb-6 text-justify">
+                {t.home.whoWeArePara1}
+              </p>
+              <p className="text-lg text-slate-600 leading-relaxed mb-10 text-justify">
+                {t.home.whoWeArePara2}
+              </p>
+              <Link
+                href="/about"
+                className="inline-flex items-center gap-3 bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
+              >
+                {t.common.learnMore}
+                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Projects Showcase — Card Flip */}
+      <section className="py-28 bg-[#FFFCF2] overflow-hidden relative">
+        {/* Decorative dot grid */}
+        <div className="absolute inset-0 opacity-[0.25]" style={{ backgroundImage: 'radial-gradient(#eab308 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
+        
+        <style>{`
+          .flip-card { position: relative; }
+          .flip-card-front,
+          .flip-card-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 1.25rem;
+            overflow: hidden;
+            transition: opacity 0.35s ease;
+          }
+          .flip-card-front  { opacity: 1; pointer-events: auto; }
+          .flip-card-back   { opacity: 0; pointer-events: none; }
+          
+          .flip-card-input:checked + .flip-card .flip-card-front {
+            opacity: 0;
+            pointer-events: none;
+          }
+          .flip-card-input:checked + .flip-card .flip-card-back {
+            opacity: 1;
+            pointer-events: auto;
+          }
+        `}</style>
+
+        <div className="container mx-auto px-4 relative z-10">
+          {/* Section Header */}
+          <div className="text-center mb-20">
+            <span className="inline-block py-1 px-4 rounded-full bg-yellow-400/20 text-yellow-700 font-bold text-sm mb-5 uppercase tracking-widest border border-yellow-400/30">
+              {t.home.whatWeDoBadge}
+            </span>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 leading-tight">
+              {t.home.whatWeDoTitle}
+            </h2>
+            <div className="h-1 w-24 bg-yellow-400 mx-auto mt-5 rounded-full" />
+          </div>
+
+          {/* Card Grid */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 hide-scrollbar">
+            {projectsList.map((project) => {
+              const cardId = `card-toggle-${project.id}`;
+              return (
+                <div key={project.id} className="relative shrink-0 w-[85vw] sm:w-auto snap-center" style={{ height: "420px" }}>
+                  <input type="checkbox" id={cardId} className="flip-card-input hidden" />
+                  <div className="flip-card w-full h-full">
+                    {/* FRONT — Image + title at bottom */}
+                    <label htmlFor={cardId} className="flip-card-front cursor-pointer block w-full h-full">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+                      />
+                      {/* Dark gradient overlay from bottom */}
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.38) 55%, transparent 100%)' }} />
+                      {/* Yellow accent bar */}
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-yellow-400" />
+                      {/* Title */}
+                      <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
+                        <h3 className="text-xl font-heading font-extrabold uppercase tracking-wide leading-tight" style={{ color: '#ffffff' }}>
+                          {project.title}
+                        </h3>
+                        <p className="text-yellow-400 text-xs font-bold uppercase tracking-widest mt-1 flex items-center gap-1">
+                          {t.home.clickPhotoToLearnMore}
+                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                        </p>
+                      </div>
+                    </label>
+
+                    {/* BACK — Blurred image ghost bg + summary */}
+                    <div className="flip-card-back" style={{ background: '#0a0a0a' }}>
+                      {/* Clicking the background closes it */}
+                      <label htmlFor={cardId} className="absolute inset-0 cursor-pointer z-0" />
+                      
+                      {/* Ghosted blurred image as shadow */}
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={project.image}
+                        alt=""
+                        aria-hidden="true"
+                        style={{
+                          position: 'absolute', inset: 0, width: '100%', height: '100%',
+                          objectFit: 'cover', filter: 'blur(6px) brightness(0.18) saturate(0.5)',
+                          transform: 'scale(1.08)'
+                        }}
+                      />
+                      {/* Overlay to deepen the shadow effect */}
+                      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(234,179,8,0.08) 0%, rgba(0,0,0,0.5) 100%)' }} />
+                      {/* Yellow side accent */}
+                      <div className="absolute top-6 bottom-6 left-0 w-1 bg-yellow-400 rounded-r-full" />
+                      {/* Content */}
+                      <div className="absolute inset-0 flex flex-col justify-center px-8 py-8 z-10 pointer-events-none">
+                        <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center mb-4 shadow-lg shrink-0 pointer-events-auto">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                        </div>
+                        <h3 className="text-xl font-heading font-extrabold text-yellow-400 mb-3 uppercase tracking-wide leading-tight pointer-events-auto" style={{ color: '#eab308' }}>
+                          {project.title}
+                        </h3>
+                        <p className="text-slate-200 text-sm leading-relaxed pointer-events-auto" style={{ textAlign: 'justify' }}>
+                          {project.summary}
+                        </p>
+                        <div className="flex gap-4 mt-5 pointer-events-auto">
+                          <Link
+                            href="/projects"
+                            className="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-bold px-5 py-2.5 rounded-full text-xs uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)]"
+                          >
+                            {t.common.learnMore}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                          </Link>
+                          <label
+                            htmlFor={cardId}
+                            className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 font-bold px-5 py-2.5 rounded-full text-xs uppercase tracking-wider hover:bg-slate-800 transition-all cursor-pointer"
+                          >
+                            {t.home.backBtn}
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-20">
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-10 py-5 rounded-full text-lg uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
+            >
+              {t.home.viewAllProjects}
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* PDD Burera Beneficiary Story Section */}
+      <section className="py-28 bg-[#FFFDF9] overflow-hidden relative border-t border-b border-amber-100">
+        {/* Background graphic elements */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
+        
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
+            {/* Left side: quote */}
+            <div className="lg:col-span-7 relative">
+              {/* Huge stylized double quote mark floating in background */}
+              <span className="absolute -top-28 -left-8 text-[14rem] md:text-[16rem] font-serif text-yellow-400/25 leading-none select-none pointer-events-none z-0">
+                “
+              </span>
+              
+              <div className="relative z-10 space-y-8 pl-4 sm:pl-8">
+                {/* Tag/Badge */}
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
+                  <span className="text-xs font-black text-yellow-800 uppercase tracking-widest">
+                    {t.home.beneficiaryBadge}
+                  </span>
+                </div>
+                
+                {/* The Quote Block */}
+                <blockquote className="space-y-6">
+                  <p className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-[1.15] tracking-tight">
+                    &ldquo;{t.home.beneficiaryQuote1Pre} <span className="line-through text-slate-400 decoration-red-500/80 decoration-[3px] underline-offset-4">{t.home.beneficiaryQuote1Strike}</span>. {t.home.beneficiaryQuote1Post} <span className="bg-yellow-400 text-slate-950 px-3 py-1 rounded-xl inline-block transform -rotate-1 font-black shadow-md mx-1 tracking-wide">{t.home.beneficiaryQuote1Accent}</span>!&rdquo;
+                  </p>
+                  
+                  <p className="text-xl md:text-2xl font-light text-slate-700 leading-relaxed italic border-l-4 border-yellow-400 pl-4">
+                    &ldquo;{t.home.beneficiaryQuote2}&rdquo;
+                  </p>
+                </blockquote>
+                
+                {/* Sign-off / Citation */}
+                <div className="pt-4 flex items-center gap-4">
+                  <div className="w-12 h-0.5 bg-yellow-400" />
+                  <div>
+                    <cite className="block not-italic">
+                      <span className="block font-black text-slate-900 text-lg uppercase tracking-wide">
+                        {t.home.beneficiaryAuthor}
+                      </span>
+                      <span className="block text-slate-500 text-xs font-bold uppercase tracking-widest mt-1">
+                        {t.home.beneficiaryLoc}
+                      </span>
+                    </cite>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side: Framed image */}
+            <div className="lg:col-span-5 relative">
+              {/* Decorative background border block (yellow solid offset box) */}
+              <div className="absolute inset-0 bg-yellow-400 translate-x-4 translate-y-4 rounded-[2rem] shadow-lg pointer-events-none z-0" />
+              
+              {/* Main Image Card Wrapper */}
+              <div className="relative bg-white p-4 rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden z-10">
+                <SmartImage
+                  cloudinaryUrl="/maize.webp"
+                  label="PDD Burera beneficiary harvesting maize"
+                  aspectRatio="4/5"
+                  className="w-full h-full rounded-[1.5rem] object-cover"
+                />
+                
+                {/* stamp / Geographical coordinates overlay */}
+                <div className="absolute bottom-8 left-8 right-8 bg-slate-950/90 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 text-white z-20 flex items-center justify-between shadow-2xl">
+                  <div>
+                    <p className="text-[10px] font-bold tracking-widest text-yellow-400 uppercase">{t.home.stampLocation}</p>
+                    <p className="text-sm font-extrabold tracking-wide mt-0.5">{t.home.stampLocationVal}</p>
+                  </div>
+                  <div className="text-right">
+                    <p className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">{t.home.stampProgram}</p>
+                    <p className="text-sm font-extrabold tracking-wide text-white mt-0.5">{t.home.stampProgramVal}</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Decorative crop mark decorations for expert editorial feel */}
+              <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-slate-300 pointer-events-none z-20" />
+              <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-slate-300 pointer-events-none z-20" />
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Section */}
+      <section className="py-12 bg-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="bg-blue-600 rounded-[3rem] overflow-hidden shadow-2xl relative">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+            <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
+              {/* Image Side */}
+              <div className="h-64 lg:h-full w-full relative">
+                <SmartImage
+                  cloudinaryUrl="/fill.webp"
+                  label="Join us in making a difference"
+                  aspectRatio="16/9"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              
+              {/* Content Side */}
+              <div className="p-8 lg:p-12 flex flex-col justify-center">
+                <span className="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-300 font-bold text-sm mb-4 uppercase tracking-wider self-start">
+                  {t.home.getInvolved}
+                </span>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold !text-white mb-4 leading-tight">
+                  {t.home.readyImpact} <br/><span className="!text-yellow-400">{t.home.readyImpactAccent}</span>
+                </h2>
+                <p className="text-base text-blue-100 leading-relaxed mb-6">
+                  {t.home.ctaText}
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Link
+                    href="/contact"
+                    className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-6 py-3 rounded-full font-bold text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                  >
+                    {t.common.supportWork}
+                  </Link>
+                  <Link
+                    href="/contact"
+                    className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-6 py-3 rounded-full font-bold text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
+                  >
+                    {t.common.contact}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
