@@ -289,9 +289,7 @@ export default function ProjectsClient() {
                       <div className="w-16 h-16 rounded-full flex items-center justify-center border-2 border-slate-900 bg-yellow-400 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] transition-transform duration-500 group-hover:-translate-y-1 shrink-0">
                         <Icon className="w-8 h-8 text-slate-900" />
                       </div>
-                      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-left leading-tight transition-colors duration-300 ${
-                        isExpanded ? "text-yellow-500" : "text-slate-900"
-                      }`}>
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-yellow-600 text-left leading-tight">
                         {project.title.split('(')[0].trim()}
                       </h2>
                     </div>

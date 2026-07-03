@@ -145,10 +145,10 @@ export default async function ProgramsPage() {
                       {program.description}
                     </p>
                     
-                    <div className="mt-auto pt-4 border-t border-border">
+                    <div className="mt-auto pt-5 border-t border-border">
                       <Link
                         href="/contact"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-ink-heading hover:text-primary transition-colors group/link"
+                        className="w-full inline-flex items-center justify-center gap-2 border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold py-2.5 px-5 rounded-full text-xs uppercase tracking-wider transition-all duration-300 group/link"
                       >
                         {lang === "fr" ? "Découvrez comment soutenir" : "Learn how to support"}
                         <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

@@ -51,7 +51,10 @@ export default function HomeProjectsSlider({ projectsList, t }: HomeProjectsSlid
               <input type="checkbox" id={cardId} className="flip-card-input hidden" />
               <div className="flip-card w-full h-full">
                 {/* FRONT — Image + title at bottom */}
-                <label htmlFor={cardId} className="flip-card-front cursor-pointer block w-full h-full">
+                <div className="flip-card-front block w-full h-full relative">
+                  {/* Absolute overlay label to make the entire card clickable to flip */}
+                  <label htmlFor={cardId} className="absolute inset-0 cursor-pointer z-20" />
+                  
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={project.image}
@@ -59,11 +62,11 @@ export default function HomeProjectsSlider({ projectsList, t }: HomeProjectsSlid
                     style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                   {/* Dark gradient overlay from bottom */}
-                  <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.38) 55%, transparent 100%)' }} />
+                  <div className="absolute inset-0 z-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.38) 55%, transparent 100%)' }} />
                   {/* Yellow accent bar */}
-                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-yellow-400" />
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-yellow-400 z-10" />
                   {/* Title */}
-                  <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
+                  <div className="absolute bottom-0 left-0 right-0 px-6 pb-7 z-10">
                     <h3 className="text-xl font-heading font-extrabold uppercase tracking-wide leading-tight mb-3" style={{ color: '#eab308' }}>
                       {project.title}
                     </h3>
@@ -72,7 +75,7 @@ export default function HomeProjectsSlider({ projectsList, t }: HomeProjectsSlid
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </span>
                   </div>
-                </label>
+                </div>
 
                 {/* BACK — Blurred image ghost bg + summary */}
                 <div className="flip-card-back" style={{ background: '#0a0a0a' }}>
