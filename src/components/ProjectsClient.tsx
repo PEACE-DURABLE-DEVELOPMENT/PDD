@@ -102,7 +102,7 @@ export default function ProjectsClient() {
         <div className="container mx-auto px-4 relative z-10">
           <div className="w-full text-left">
             <h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 tracking-tight uppercase"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-heading font-extrabold mb-6 tracking-tight uppercase"
               style={{ color: "#ffffff", textShadow: "none" }}
             >
               {language === "fr" ? (
@@ -156,18 +156,15 @@ export default function ProjectsClient() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-start">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center">
+                        <div className="flex items-center gap-3 mb-2 w-full">
+                          <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center shrink-0">
                             <Icon className="w-4 h-4 text-slate-900" />
                           </div>
-                          <span className="text-yellow-400 text-xs font-bold uppercase tracking-wider">
-                            Project
-                          </span>
+                          <h3 className="text-lg font-heading font-extrabold text-yellow-400 uppercase tracking-wide leading-tight text-left">
+                            {project.title.split('(')[0].trim()}
+                          </h3>
                         </div>
-                        <h3 className="text-xl font-heading font-extrabold text-white uppercase tracking-wide leading-tight text-left">
-                          {project.title.split('(')[0].trim()}
-                        </h3>
-                        <span className="text-yellow-400 text-xs font-bold uppercase tracking-widest mt-2 flex items-center gap-1">
+                        <span className="text-white text-xs font-bold uppercase tracking-widest mt-2 flex items-center gap-1">
                           {t.home.clickPhotoToLearnMore || "Click to learn more"}
                           <ArrowRight className="w-3 h-3" />
                         </span>
@@ -244,7 +241,7 @@ export default function ProjectsClient() {
                           </div>
                           {isExpanded && (
                             <Link
-                              href={`/contact?project=${encodeURIComponent(project.title)}`}
+                              href="/donate"
                               className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-extrabold py-2.5 rounded-full text-center text-xs uppercase tracking-wider transition-colors shadow-sm"
                             >
                               {language === "fr" ? `Soutenir ce projet` : `Support this project`}
@@ -292,7 +289,9 @@ export default function ProjectsClient() {
                       <div className="w-16 h-16 rounded-full flex items-center justify-center border-2 border-slate-900 bg-yellow-400 shadow-[4px_4px_0px_0px_rgba(15,23,42,1)] transition-transform duration-500 group-hover:-translate-y-1 shrink-0">
                         <Icon className="w-8 h-8 text-slate-900" />
                       </div>
-                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-slate-900 text-left leading-tight">
+                      <h2 className={`text-3xl md:text-4xl lg:text-5xl font-heading font-extrabold text-left leading-tight transition-colors duration-300 ${
+                        isExpanded ? "text-yellow-500" : "text-slate-900"
+                      }`}>
                         {project.title.split('(')[0].trim()}
                       </h2>
                     </div>
@@ -332,7 +331,7 @@ export default function ProjectsClient() {
 
                       {isExpanded && (
                         <Link 
-                          href={`/contact?project=${encodeURIComponent(project.title)}`}
+                          href="/donate"
                           className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold px-8 py-4 rounded-full transition-all shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] hover:translate-x-1 hover:translate-y-1 text-sm uppercase tracking-wider group"
                         >
                           {language === "fr" ? `Soutenir ${project.title.split("(")[0].trim()}` : `Support ${project.title.split("(")[0].trim()}`}

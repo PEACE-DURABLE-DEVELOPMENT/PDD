@@ -67,7 +67,7 @@ export default function HomeProjectsSlider({ projectsList, t }: HomeProjectsSlid
                     <h3 className="text-xl font-heading font-extrabold uppercase tracking-wide leading-tight" style={{ color: '#ffffff' }}>
                       {project.title}
                     </h3>
-                    <p className="text-yellow-400 text-xs font-bold uppercase tracking-widest mt-1 flex items-center gap-1">
+                    <p className="text-white text-xs font-bold uppercase tracking-widest mt-1 flex items-center gap-1">
                       {t.home.clickPhotoToLearnMore}
                       <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </p>
