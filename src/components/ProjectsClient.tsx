@@ -245,14 +245,14 @@ export default function ProjectsClient() {
                               {t.home.backBtn || "Back"}
                             </button>
                           </div>
-                          {isExpanded && (
-                            <Link
-                              href="/donate"
-                              className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-extrabold py-2.5 rounded-full text-center text-xs uppercase tracking-wider transition-colors shadow-sm"
-                            >
-                              {language === "fr" ? `Soutenir ce projet` : `Support this project`}
-                            </Link>
-                          )}
+                           {isExpanded && (
+                             <Link
+                               href="/donate"
+                               className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-extrabold py-3 rounded-full text-center text-xs uppercase tracking-wider transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 block"
+                             >
+                               {language === "fr" ? `Soutenir ce projet` : `Support this project`}
+                             </Link>
+                           )}
                         </div>
                       </div>
                     </div>
@@ -333,15 +333,15 @@ export default function ProjectsClient() {
                         )}
                       </button>
 
-                      {isExpanded && (
-                        <Link 
-                          href="/donate"
-                          className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-extrabold px-8 py-4 rounded-full transition-all shadow-[6px_6px_0px_0px_rgba(15,23,42,1)] hover:shadow-[2px_2px_0px_0px_rgba(15,23,42,1)] hover:translate-x-1 hover:translate-y-1 text-sm uppercase tracking-wider group"
-                        >
-                          {language === "fr" ? `Soutenir ${project.title.split("(")[0].trim()}` : `Support ${project.title.split("(")[0].trim()}`}
-                          <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </Link>
-                      )}
+                       {isExpanded && (
+                         <Link 
+                           href="/donate"
+                           className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-extrabold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm uppercase tracking-wider group"
+                         >
+                           {language === "fr" ? `Soutenir ${project.title.split("(")[0].trim()}` : `Support ${project.title.split("(")[0].trim()}`}
+                           <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                         </Link>
+                       )}
                     </div>
                   </div>
                 </div>
@@ -372,7 +372,7 @@ export default function ProjectsClient() {
             }
           </p>
           <Link
-            href="/contact"
+            href="/donate"
             className="inline-flex items-center justify-center px-10 py-5 bg-yellow-400 text-slate-900 rounded-full font-extrabold hover:bg-yellow-500 transition-all shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:translate-x-1 hover:translate-y-1 text-lg uppercase tracking-wider"
           >
             {language === "fr" ? "Impliquez-vous dès aujourd'hui" : "Get Involved Today"}

@@ -147,8 +147,8 @@ export default async function ProgramsPage() {
                     
                     <div className="mt-auto pt-5 border-t border-border">
                       <Link
-                        href="/contact"
-                        className="w-full inline-flex items-center justify-center gap-2 border-2 border-slate-900 text-slate-900 hover:bg-slate-900 hover:text-white font-bold py-2.5 px-5 rounded-full text-xs uppercase tracking-wider transition-all duration-300 group/link"
+                        href="/donate"
+                        className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold py-3 px-5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 group/link"
                       >
                         {lang === "fr" ? "Découvrez comment soutenir" : "Learn how to support"}
                         <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

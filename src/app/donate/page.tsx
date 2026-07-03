@@ -113,7 +113,7 @@ export default function DonatePage() {
               <div className="p-6 md:p-8 bg-slate-900 text-white relative">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-heading font-bold text-yellow-400">{t.donate.widgetHeader}</h2>
+                  <h2 className="text-2xl font-heading font-bold !text-yellow-400">{t.donate.widgetHeader}</h2>
                   <div className="flex bg-slate-800 p-1 rounded-full border border-slate-700 text-xs font-bold">
                     <button
                       onClick={() => setFrequency("once")}
@@ -437,7 +437,7 @@ export default function DonatePage() {
               <div className="bg-slate-900 text-white rounded-3xl p-6 md:p-6 border border-slate-850 shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
                 
-                <h3 className="text-lg font-heading font-extrabold text-yellow-400 mb-6 flex items-center gap-2">
+                <h3 className="text-lg font-heading font-extrabold !text-yellow-400 mb-6 flex items-center gap-2">
                   <ShieldCheck className="w-5 h-5 text-yellow-400" />
                   {t.donate.trustTitle}
                 </h3>
@@ -448,7 +448,7 @@ export default function DonatePage() {
                       <span className="font-heading font-extrabold text-sm">100%</span>
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm text-yellow-400">{t.donate.trust1Title}</h4>
+                      <h4 className="font-heading font-bold text-sm !text-yellow-400">{t.donate.trust1Title}</h4>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                         {t.donate.trust1Desc}
                       </p>
@@ -460,7 +460,7 @@ export default function DonatePage() {
                       <Check className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm text-yellow-400">{t.donate.trust2Title}</h4>
+                      <h4 className="font-heading font-bold text-sm !text-yellow-400">{t.donate.trust2Title}</h4>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                         {t.donate.trust2Desc}
                       </p>
@@ -472,7 +472,7 @@ export default function DonatePage() {
                       <Heart className="w-4.5 h-4.5 fill-yellow-400 text-yellow-400" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm text-yellow-400">{t.donate.trust3Title}</h4>
+                      <h4 className="font-heading font-bold text-sm !text-yellow-400">{t.donate.trust3Title}</h4>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                         {t.donate.trust3Desc}
                       </p>
