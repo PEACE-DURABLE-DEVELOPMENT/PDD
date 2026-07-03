@@ -64,10 +64,10 @@ export default function Navbar() {
 
         {/* Actions (Desktop/Mobile) */}
         <div className="flex items-center gap-4">
-          {/* Language Toggle - Hidden on small screen headers, accessible via mobile drawer */}
+          {/* Language Toggle - Visible on all screen headers, before hamburger */}
           <button
             onClick={() => setLanguage(language === "en" ? "fr" : "en")}
-            className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-colors text-xs font-bold text-slate-700 cursor-pointer"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-200 hover:border-slate-400 hover:bg-slate-50 transition-colors text-xs font-bold text-slate-700 cursor-pointer"
             aria-label="Switch language"
           >
             <Globe className="w-4 h-4 text-slate-500" />
