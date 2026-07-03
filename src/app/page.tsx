@@ -277,7 +277,7 @@ export default async function Home() {
       {/* Call to Action Section */}
       <section className="py-12 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="bg-blue-600 rounded-[3rem] overflow-hidden shadow-2xl relative">
+          <div className="bg-[#4a90e2] rounded-[3rem] overflow-hidden shadow-2xl relative">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
             

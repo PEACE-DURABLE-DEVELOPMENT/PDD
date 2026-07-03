@@ -175,7 +175,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-blue-700 border-t-4 border-yellow-500 relative overflow-hidden">
+      <section className="py-24 bg-[#4a90e2] border-t-4 border-yellow-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">

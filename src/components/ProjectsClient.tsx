@@ -156,7 +156,7 @@ export default function ProjectsClient() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
                       <div className="absolute bottom-0 left-0 right-0 p-6 flex flex-col items-start">
-                        <div className="flex items-center gap-3 mb-2 w-full">
+                        <div className="flex items-center gap-3 mb-3 w-full">
                           <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center shrink-0">
                             <Icon className="w-4 h-4 text-slate-900" />
                           </div>
@@ -164,7 +164,7 @@ export default function ProjectsClient() {
                             {project.title.split('(')[0].trim()}
                           </h3>
                         </div>
-                        <span className="text-white text-xs font-bold uppercase tracking-widest mt-2 flex items-center gap-1">
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full border border-white/20 bg-white/10 backdrop-blur-xs text-white text-[10px] font-bold uppercase tracking-widest transition-colors hover:bg-white/20">
                           {t.home.clickPhotoToLearnMore || "Click to learn more"}
                           <ArrowRight className="w-3 h-3" />
                         </span>
@@ -348,7 +348,7 @@ export default function ProjectsClient() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-blue-700 border-t-4 border-yellow-500">
+      <section className="py-24 bg-[#4a90e2] border-t-4 border-yellow-500">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl md:text-5xl font-heading font-extrabold mb-8 text-white">
             {language === "fr" ? (
