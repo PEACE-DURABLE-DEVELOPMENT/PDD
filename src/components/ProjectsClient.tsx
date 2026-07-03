@@ -160,7 +160,10 @@ export default function ProjectsClient() {
                           <div className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center shrink-0">
                             <Icon className="w-4 h-4 text-slate-900" />
                           </div>
-                          <h3 className="text-lg font-heading font-extrabold text-yellow-400 uppercase tracking-wide leading-tight text-left">
+                          <h3 
+                            className="text-lg font-heading font-extrabold uppercase tracking-wide leading-tight text-left"
+                            style={{ color: '#eab308' }}
+                          >
                             {project.title.split('(')[0].trim()}
                           </h3>
                         </div>
@@ -194,7 +197,10 @@ export default function ProjectsClient() {
                               <div className="w-10 h-10 rounded-xl bg-yellow-400 flex items-center justify-center shrink-0">
                                 <Icon className="w-5 h-5 text-slate-900" />
                               </div>
-                              <h3 className="text-lg font-heading font-extrabold text-yellow-400 uppercase tracking-wide leading-tight line-clamp-2">
+                              <h3 
+                                className="text-lg font-heading font-extrabold uppercase tracking-wide leading-tight line-clamp-2"
+                                style={{ color: '#eab308' }}
+                              >
                                 {project.title.split('(')[0].trim()}
                               </h3>
                             </div>
