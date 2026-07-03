@@ -52,15 +52,15 @@ export default async function ImpactPage() {
       {/* Key Numbers Section */}
       <section className="py-16 bg-white relative z-20 -mt-8 border-b border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.02)]">
         <div className="container mx-auto px-4">
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-6 hide-scrollbar">
-            <div className="w-[85vw] sm:w-auto shrink-0 snap-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+            <div>
               <StatsCounter
                 value={720}
                 label={t.impact.stats.farmers}
                 icon={<Sprout className="w-6 h-6" />}
               />
             </div>
-            <div className="w-[85vw] sm:w-auto shrink-0 snap-center">
+            <div>
               <StatsCounter
                 value={20}
                 suffix="k+"
@@ -68,21 +68,21 @@ export default async function ImpactPage() {
                 icon={<Users className="w-6 h-6" />}
               />
             </div>
-            <div className="w-[85vw] sm:w-auto shrink-0 snap-center">
+            <div>
               <StatsCounter
                 value={54}
                 label={t.impact.stats.groups}
                 icon={<Coins className="w-6 h-6" />}
               />
             </div>
-            <div className="w-[85vw] sm:w-auto shrink-0 snap-center">
+            <div>
               <StatsCounter
                 value={352}
                 label={t.impact.stats.filters}
                 icon={<Droplets className="w-6 h-6" />}
               />
             </div>
-            <div className="w-[85vw] sm:w-auto shrink-0 snap-center">
+            <div>
               <StatsCounter
                 value={275}
                 label={t.impact.stats.goats}
