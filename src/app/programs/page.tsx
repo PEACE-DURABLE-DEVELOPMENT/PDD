@@ -196,7 +196,7 @@ export default async function ProgramsPage() {
 
               <div className="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
                 <Link
-                  href="/contact"
+                  href="/donate"
                   className="inline-flex items-center justify-center px-10 py-5 bg-yellow-400 hover:bg-yellow-500 text-slate-950 rounded-full font-extrabold text-sm uppercase tracking-wider transition-all shadow-[0_4px_20px_rgba(234,179,8,0.3)] hover:shadow-[0_4px_30px_rgba(234,179,8,0.5)] hover:-translate-y-0.5"
                 >
                   {t.programs.ctaBtn1}
