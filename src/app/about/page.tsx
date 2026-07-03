@@ -1,7 +1,8 @@
 import SmartImage from "@/components/SmartImage";
-import { Heart, Users, TreePine, Handshake, User } from "lucide-react";
+import { Heart, Users, TreePine, Handshake } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
+import TeamSlider from "@/components/TeamSlider";
 
 export const metadata = {
   title: "About Us | PDD Rwanda",
@@ -85,8 +86,22 @@ export default async function AboutPage() {
 
       {/* Main Content */}
       <section className="py-20 bg-surface">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
+        <div className="container mx-auto px-4 flex flex-col gap-20 lg:gap-28">
+          
+          {/* Row 1: Image on Left, Words on Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            {/* Image 1 */}
+            <div className="lg:col-span-5 w-full">
+              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm">
+                <SmartImage 
+                  cloudinaryUrl="/peace.webp"
+                  label="About Us — community gathering or founders" 
+                  aspectRatio="4/3" 
+                  className="w-full h-full hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+            </div>
+            {/* Words 1 */}
             <div className="lg:col-span-7 prose prose-lg prose-slate max-w-none text-ink-body text-justify">
               <p>
                 {t.about.para1}
@@ -95,8 +110,25 @@ export default async function AboutPage() {
               <p className="text-xl font-medium text-ink-heading border-l-4 border-primary pl-6 py-2 my-8 italic">
                 {t.about.conviction}
               </p>
+            </div>
+          </div>
 
-              <h2 className="text-2xl font-heading font-bold text-ink-heading mt-12 mb-4">{t.about.rootCausesTitle}</h2>
+          {/* Row 2: Words on Left, Image on Right */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
+            {/* Image 2 (ordered last on desktop, stacks first on mobile due to source order) */}
+            <div className="lg:col-span-5 lg:order-last w-full">
+              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm">
+                <SmartImage 
+                  cloudinaryUrl="/hero.webp"
+                  label="About Us — impactful field work" 
+                  aspectRatio="4/3" 
+                  className="w-full h-full hover:scale-[1.03] transition-transform duration-500"
+                />
+              </div>
+            </div>
+            {/* Words 2 */}
+            <div className="lg:col-span-7 prose prose-lg prose-slate max-w-none text-ink-body text-justify">
+              <h2 className="text-2xl font-heading font-bold text-ink-heading mb-4">{t.about.rootCausesTitle}</h2>
               <p>
                 {t.about.rootCausesDesc}
               </p>
@@ -117,26 +149,8 @@ export default async function AboutPage() {
                 {t.about.approachPara3}
               </p>
             </div>
-            
-            <div className="lg:col-span-5 space-y-8">
-              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm">
-                <SmartImage 
-                  cloudinaryUrl="/peace.webp"
-                  label="About Us — community gathering or founders" 
-                  aspectRatio="4/3" 
-                  className="w-full h-full hover:scale-[1.03] transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm">
-                <SmartImage 
-                  cloudinaryUrl="/hero.webp"
-                  label="About Us — impactful field work" 
-                  aspectRatio="4/3" 
-                  className="w-full h-full hover:scale-[1.03] transition-transform duration-500"
-                />
-              </div>
-            </div>
           </div>
+
         </div>
       </section>
 
@@ -230,43 +244,7 @@ export default async function AboutPage() {
             </p>
           </div>
 
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto hide-scrollbar">
-            {teamMembers.map((member, idx) => (
-              <div key={idx} className="flex flex-col bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 w-[85vw] md:w-auto shrink-0 snap-center">
-                {/* Photo Placeholder / Image */}
-                <div className="relative aspect-square w-full bg-slate-50 border-b border-border overflow-hidden">
-                  {member.image ? (
-                    <SmartImage
-                      cloudinaryUrl={member.image}
-                      label={`${member.name} — ${member.role}`}
-                      aspectRatio="1/1"
-                      className="w-full h-full"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 p-6">
-                      <div className="w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300 border border-slate-200">
-                        <User className="w-10 h-10 text-slate-400" />
-                      </div>
-                      <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">{t.common.photoPending}</span>
-                    </div>
-                  )}
-                </div>
-                
-                {/* Content */}
-                <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-heading font-bold text-ink-heading mb-1 group-hover:text-primary transition-colors duration-200">
-                    {member.name}
-                  </h3>
-                  <p className="text-xs font-bold text-accent uppercase tracking-widest mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-ink-body text-sm leading-relaxed">
-                    {member.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TeamSlider teamMembers={teamMembers} photoPendingText={t.common.photoPending} />
         </div>
       </section>
     </div>

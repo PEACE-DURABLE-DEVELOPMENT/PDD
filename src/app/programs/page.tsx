@@ -110,13 +110,13 @@ export default async function ProgramsPage() {
       {/* Programs Grid Layout */}
       <section className="py-24 bg-surface-alt relative">
         <div className="container mx-auto px-4">
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10 hide-scrollbar">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
             {programs.map((program) => {
               const Icon = program.icon;
               return (
                 <div 
                   key={program.id} 
-                  className="group relative flex flex-col bg-surface rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-border w-[85vw] md:w-auto shrink-0 snap-center"
+                  className="group relative flex flex-col bg-surface rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-border"
                 >
                   {/* Top Image */}
                   <div className="w-full aspect-[4/3] relative overflow-hidden">

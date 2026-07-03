@@ -344,21 +344,21 @@ export default function DonatePage() {
 
                       <div className="space-y-4">
                         {/* USD Account Card */}
-                        <div className="border border-border bg-surface-alt rounded-2xl p-5 relative">
-                          <div className="flex items-center justify-between mb-4 border-b border-border/80 pb-2">
-                            <span className="text-xs font-bold text-yellow-600 bg-yellow-400/10 border border-yellow-400/20 px-2.5 py-0.5 rounded-full">
+                        <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
+                          <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
+                            <span className="text-[11px] font-bold text-yellow-600 bg-yellow-400/10 border border-yellow-400/20 px-2 py-0.5 rounded-full">
                               {t.donate.bankIntLabel}
                             </span>
-                            <span className="text-xs font-semibold text-slate-500">Bank of Kigali</span>
+                            <span className="text-[11px] font-semibold text-slate-500">Bank of Kigali</span>
                           </div>
                           
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                             <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
-                              <p className="font-semibold text-slate-800">PEACE AND DURABLE DEVELOPMENT</p>
+                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
+                              <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
                                 {t.donate.bankAccountNumber}
                                 <button 
                                   onClick={() => handleCopy("00095-07758364-42", "usdbank")}
@@ -367,10 +367,10 @@ export default function DonatePage() {
                                   {copiedId === "usdbank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
                                 </button>
                               </p>
-                              <p className="font-mono font-semibold text-slate-800">00095-07758364-42</p>
+                              <p className="font-mono font-semibold text-slate-800 text-[13px]">00095-07758364-42</p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
                                 {t.donate.bankSwift}
                                 <button 
                                   onClick={() => handleCopy("BKIGRWKGl", "swift")}
@@ -379,11 +379,11 @@ export default function DonatePage() {
                                   {copiedId === "swift" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
                                 </button>
                               </p>
-                              <p className="font-mono font-semibold text-slate-800">BKIGRWKGl</p>
+                              <p className="font-mono font-semibold text-slate-800 text-[13px]">BKIGRWKGl</p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAddress}</p>
-                              <p className="text-xs text-slate-600 leading-normal">
+                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAddress}</p>
+                              <p className="text-[11px] text-slate-600 leading-normal">
                                 Bank of Kigali Plc, 6122 KN 4 Ave, Kigali, Rwanda
                               </p>
                             </div>
@@ -391,21 +391,21 @@ export default function DonatePage() {
                         </div>
 
                         {/* RWF Account Card */}
-                        <div className="border border-border bg-surface-alt rounded-2xl p-5 relative">
-                          <div className="flex items-center justify-between mb-4 border-b border-border/80 pb-2">
-                            <span className="text-xs font-bold text-secondary bg-secondary/10 border border-secondary/20 px-2.5 py-0.5 rounded-full">
+                        <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
+                          <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
+                            <span className="text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/20 px-2 py-0.5 rounded-full">
                               {t.donate.bankLocalLabel}
                             </span>
-                            <span className="text-xs font-semibold text-slate-500">Bank of Kigali</span>
+                            <span className="text-[11px] font-semibold text-slate-500">Bank of Kigali</span>
                           </div>
 
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
                             <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
-                              <p className="font-semibold text-slate-800">PEACE AND DURABLE DEVELOPMENT</p>
+                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
+                              <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
                             </div>
                             <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
                                 {t.donate.bankAccountNumber}
                                 <button 
                                   onClick={() => handleCopy("00095-07758364-41", "rwfbank")}
@@ -414,7 +414,7 @@ export default function DonatePage() {
                                   {copiedId === "rwfbank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
                                 </button>
                               </p>
-                              <p className="font-mono font-semibold text-slate-800">00095-07758364-41</p>
+                              <p className="font-mono font-semibold text-slate-800 text-[13px]">00095-07758364-41</p>
                             </div>
                           </div>
                         </div>
@@ -434,11 +434,11 @@ export default function DonatePage() {
             <div className="lg:col-span-5 space-y-10">
               
               {/* Trust Section */}
-              <div className="bg-slate-900 text-white rounded-3xl p-6 md:p-8 border border-slate-850 shadow-xl relative overflow-hidden">
+              <div className="bg-slate-900 text-white rounded-3xl p-6 md:p-6 border border-slate-850 shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
                 
-                <h3 className="text-xl font-heading font-extrabold text-white mb-6 flex items-center gap-2">
-                  <ShieldCheck className="w-6 h-6 text-yellow-400" />
+                <h3 className="text-lg font-heading font-extrabold text-yellow-400 mb-6 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-yellow-400" />
                   {t.donate.trustTitle}
                 </h3>
 

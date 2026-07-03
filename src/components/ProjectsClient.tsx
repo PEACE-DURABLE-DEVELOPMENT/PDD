@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import SmartImage from "@/components/SmartImage";
 import { 
   ArrowRight, 
@@ -10,7 +10,9 @@ import {
   Wheat, 
   HeartHandshake, 
   ChevronDown, 
-  ChevronUp
+  ChevronUp,
+  ChevronLeft,
+  ChevronRight
 } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -30,6 +32,16 @@ export default function ProjectsClient() {
   const t = translations[language];
   const [expandedProjects, setExpandedProjects] = useState<Record<string, boolean>>({});
   const [flippedProjects, setFlippedProjects] = useState<Record<string, boolean>>({});
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const cardWidth = container.offsetWidth * 0.85; // card size is 85% of container width
+      const scrollAmount = direction === "left" ? -cardWidth - 24 : cardWidth + 24; // width + gap
+      container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
 
   const toggleExpand = (id: string) => {
     setExpandedProjects((prev) => ({
@@ -115,8 +127,8 @@ export default function ProjectsClient() {
       <section className="py-24 md:py-32 overflow-hidden">
         <div className="container mx-auto px-4">
           
-          {/* Mobile View: Horizontal Scroll with 3D Flip Card */}
-          <div className="flex lg:hidden overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 gap-6 hide-scrollbar">
+          {/* Mobile View: Vertical list of 3D Flip Cards (One card below other) */}
+          <div className="flex flex-col lg:hidden gap-10">
             {projects.map((project) => {
               const Icon = project.icon;
               const isFlipped = !!flippedProjects[project.id];
@@ -125,7 +137,7 @@ export default function ProjectsClient() {
               return (
                 <div 
                   key={project.id} 
-                  className="relative shrink-0 w-[85vw] snap-center [perspective:1000px]" 
+                  className="relative w-full [perspective:1000px]" 
                   style={{ height: "460px" }}
                 >
                   <div className={`relative w-full h-full transition-transform duration-500 [transform-style:preserve-3d] ${

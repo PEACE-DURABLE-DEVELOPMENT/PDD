@@ -3,6 +3,7 @@ import SmartImage from "@/components/SmartImage";
 import { ArrowRight } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
+import HomeProjectsSlider from "@/components/HomeProjectsSlider";
 
 export default async function Home() {
   const cookieStore = await cookies();
@@ -60,24 +61,24 @@ export default async function Home() {
         
         <div className="container mx-auto px-4 relative z-20">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
               <span className="block text-yellow-400">{t.home.heroTitle1}</span>
               <span className="block text-white">{t.home.heroTitle2}</span>
             </h1>
-            <p className="text-xl md:text-2xl text-slate-200 mb-8 max-w-5xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-xl md:text-2xl text-slate-200 mb-8 max-w-5xl mx-auto leading-relaxed">
               <span className="block">{t.home.heroSub1}</span>
               <span className="block">{t.home.heroSub2}</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
               <Link
                 href="/projects"
-                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-8 py-4 rounded-full font-semibold text-lg text-center transition-all shadow-sm"
+                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
               >
                 {t.home.ourProjects}
               </Link>
               <Link
                 href="/contact"
-                className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-8 py-4 rounded-full font-semibold text-lg text-center transition-all shadow-sm"
+                className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
               >
                 {t.common.supportWork}
               </Link>
@@ -169,98 +170,14 @@ export default async function Home() {
             <div className="h-1 w-24 bg-yellow-400 mx-auto mt-5 rounded-full" />
           </div>
 
-          {/* Card Grid */}
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 sm:mx-0 sm:px-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 hide-scrollbar">
-            {projectsList.map((project) => {
-              const cardId = `card-toggle-${project.id}`;
-              return (
-                <div key={project.id} className="relative shrink-0 w-[85vw] sm:w-auto snap-center" style={{ height: "420px" }}>
-                  <input type="checkbox" id={cardId} className="flip-card-input hidden" />
-                  <div className="flip-card w-full h-full">
-                    {/* FRONT — Image + title at bottom */}
-                    <label htmlFor={cardId} className="flip-card-front cursor-pointer block w-full h-full">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
-                      />
-                      {/* Dark gradient overlay from bottom */}
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.38) 55%, transparent 100%)' }} />
-                      {/* Yellow accent bar */}
-                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-yellow-400" />
-                      {/* Title */}
-                      <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
-                        <h3 className="text-xl font-heading font-extrabold uppercase tracking-wide leading-tight" style={{ color: '#ffffff' }}>
-                          {project.title}
-                        </h3>
-                        <p className="text-yellow-400 text-xs font-bold uppercase tracking-widest mt-1 flex items-center gap-1">
-                          {t.home.clickPhotoToLearnMore}
-                          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                        </p>
-                      </div>
-                    </label>
-
-                    {/* BACK — Blurred image ghost bg + summary */}
-                    <div className="flip-card-back" style={{ background: '#0a0a0a' }}>
-                      {/* Clicking the background closes it */}
-                      <label htmlFor={cardId} className="absolute inset-0 cursor-pointer z-0" />
-                      
-                      {/* Ghosted blurred image as shadow */}
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={project.image}
-                        alt=""
-                        aria-hidden="true"
-                        style={{
-                          position: 'absolute', inset: 0, width: '100%', height: '100%',
-                          objectFit: 'cover', filter: 'blur(6px) brightness(0.18) saturate(0.5)',
-                          transform: 'scale(1.08)'
-                        }}
-                      />
-                      {/* Overlay to deepen the shadow effect */}
-                      <div className="absolute inset-0" style={{ background: 'linear-gradient(135deg, rgba(234,179,8,0.08) 0%, rgba(0,0,0,0.5) 100%)' }} />
-                      {/* Yellow side accent */}
-                      <div className="absolute top-6 bottom-6 left-0 w-1 bg-yellow-400 rounded-r-full" />
-                      {/* Content */}
-                      <div className="absolute inset-0 flex flex-col justify-center px-8 py-8 z-10 pointer-events-none">
-                        <div className="w-10 h-10 rounded-full bg-yellow-400 flex items-center justify-center mb-4 shadow-lg shrink-0 pointer-events-auto">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0f172a" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-                        </div>
-                        <h3 className="text-xl font-heading font-extrabold text-yellow-400 mb-3 uppercase tracking-wide leading-tight pointer-events-auto" style={{ color: '#eab308' }}>
-                          {project.title}
-                        </h3>
-                        <p className="text-slate-200 text-sm leading-relaxed pointer-events-auto" style={{ textAlign: 'justify' }}>
-                          {project.summary}
-                        </p>
-                        <div className="flex gap-4 mt-5 pointer-events-auto">
-                          <Link
-                            href="/projects"
-                            className="inline-flex items-center gap-2 bg-yellow-400 text-slate-900 font-bold px-5 py-2.5 rounded-full text-xs uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)]"
-                          >
-                            {t.common.learnMore}
-                            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                          </Link>
-                          <label
-                            htmlFor={cardId}
-                            className="inline-flex items-center gap-2 border border-slate-700 text-slate-300 font-bold px-5 py-2.5 rounded-full text-xs uppercase tracking-wider hover:bg-slate-800 transition-all cursor-pointer"
-                          >
-                            {t.home.backBtn}
-                          </label>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          {/* Card Grid / Swiper */}
+          <HomeProjectsSlider projectsList={projectsList} t={t} />
 
           {/* Bottom CTA */}
           <div className="text-center mt-20">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-10 py-5 rounded-full text-lg uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
+              className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-sm sm:text-lg uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
             >
               {t.home.viewAllProjects}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -389,13 +306,13 @@ export default async function Home() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contact"
-                    className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-6 py-3 rounded-full font-bold text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                    className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
                   >
                     {t.common.supportWork}
                   </Link>
                   <Link
                     href="/contact"
-                    className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-6 py-3 rounded-full font-bold text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
+                    className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
                   >
                     {t.common.contact}
                   </Link>
