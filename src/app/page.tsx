@@ -236,8 +236,8 @@ export default async function Home() {
                   </div>
                 </div>
 
-                {/* Explore Our Programs Button */}
-                <div className="pt-4">
+                {/* Explore Our Programs Button (Desktop only) */}
+                <div className="pt-4 hidden lg:block">
                   <Link
                     href="/programs"
                     className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
@@ -279,6 +279,17 @@ export default async function Home() {
               {/* Decorative crop mark decorations for expert editorial feel */}
               <div className="absolute -top-3 -left-3 w-8 h-8 border-t-2 border-l-2 border-slate-300 pointer-events-none z-20" />
               <div className="absolute -bottom-3 -right-3 w-8 h-8 border-b-2 border-r-2 border-slate-300 pointer-events-none z-20" />
+
+              {/* Explore Our Programs Button (Mobile only, under image) */}
+              <div className="mt-12 text-center lg:hidden relative z-30">
+                <Link
+                  href="/programs"
+                  className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
+                >
+                  {t.home.explorePrograms}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                </Link>
+              </div>
             </div>
             
           </div>

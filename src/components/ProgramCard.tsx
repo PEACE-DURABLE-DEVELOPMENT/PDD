@@ -3,11 +3,21 @@
 import { useState } from "react";
 import SmartImage from "@/components/SmartImage";
 import Link from "next/link";
-import { ArrowRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ArrowRight, ChevronDown, ChevronUp, Filter, Apple, Users, HeartPulse, BookOpenCheck, Landmark, TreePine } from "lucide-react";
+
+const iconMap: Record<string, React.ComponentType<any>> = {
+  filter: Filter,
+  apple: Apple,
+  users: Users,
+  heartPulse: HeartPulse,
+  bookOpenCheck: BookOpenCheck,
+  landmark: Landmark,
+  treePine: TreePine
+};
 
 export default function ProgramCard({ program, lang, t }: { program: any, lang: string, t: any }) {
   const [expanded, setExpanded] = useState(false);
-  const Icon = program.icon;
+  const Icon = iconMap[program.iconName] || Filter;
   
   return (
     <div className="group relative flex flex-col bg-surface rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-border">
