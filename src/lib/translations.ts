@@ -1,4 +1,4 @@
-export const translations = {
+const translationsRaw = {
   en: {
     common: {
       supportWork: "Support Our Work",
@@ -72,6 +72,7 @@ export const translations = {
       stampLocationVal: "Burera District, Rwanda",
       stampProgram: "Program",
       stampProgramVal: "Sustainable Ag.",
+      explorePrograms: "Explore Our Programs",
       getInvolved: "Get Involved",
       readyImpact: "Ready to Make a",
       readyImpactAccent: "Real Impact?",
@@ -469,6 +470,7 @@ export const translations = {
       stampLocationVal: "District de Burera, Rwanda",
       stampProgram: "Programme",
       stampProgramVal: "Agri. Durable",
+      explorePrograms: "Explorer nos programmes",
       getInvolved: "Impliquez-vous",
       readyImpact: "Prêt à faire un",
       readyImpactAccent: "Réel Impact ?",
@@ -794,3 +796,15 @@ export const translations = {
     },
   },
 };
+
+export const translations = new Proxy(translationsRaw, {
+  get(target, prop, receiver) {
+    if (prop === "en" || prop === "fr") {
+      return target[prop];
+    }
+    if (typeof prop === "string" && !(prop in target)) {
+      return target.en;
+    }
+    return Reflect.get(target, prop, receiver);
+  }
+}) as typeof translationsRaw;

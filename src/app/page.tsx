@@ -235,6 +235,17 @@ export default async function Home() {
                     </cite>
                   </div>
                 </div>
+
+                {/* Explore Our Programs Button */}
+                <div className="pt-4">
+                  <Link
+                    href="/programs"
+                    className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
+                  >
+                    {t.home.explorePrograms}
+                    <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+                  </Link>
+                </div>
               </div>
             </div>
 
