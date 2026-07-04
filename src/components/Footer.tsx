@@ -103,11 +103,6 @@ export default async function Footer() {
 
         <div className="pt-8 border-t border-slate-900 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <p>© {new Date().getFullYear()} Peace and Durable Development (PDD). {t.footer.allRightsReserved}</p>
-          <div className="flex items-center gap-4">
-            <Link href="#" className="hover:text-yellow-400 transition-colors">Twitter</Link>
-            <Link href="#" className="hover:text-yellow-400 transition-colors">Facebook</Link>
-            <Link href="#" className="hover:text-yellow-400 transition-colors">LinkedIn</Link>
-          </div>
         </div>
       </div>
     </footer>

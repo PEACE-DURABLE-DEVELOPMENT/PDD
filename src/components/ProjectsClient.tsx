@@ -248,9 +248,9 @@ export default function ProjectsClient() {
                            {isExpanded && (
                              <Link
                                href="/donate"
-                               className="w-full bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-extrabold py-3 rounded-full text-center text-xs uppercase tracking-wider transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 block"
+                               className="w-full bg-blue-600 hover:bg-blue-700 text-white font-extrabold py-3 rounded-full text-center text-xs uppercase tracking-wider transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 block"
                              >
-                               {language === "fr" ? `Soutenir ce projet` : `Support this project`}
+                               {t.common.supportWork || (language === "fr" ? "Soutenir Notre Travail" : "Support Our Work")}
                              </Link>
                            )}
                         </div>
@@ -336,9 +336,9 @@ export default function ProjectsClient() {
                        {isExpanded && (
                          <Link 
                            href="/donate"
-                           className="inline-flex items-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-extrabold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 text-sm uppercase tracking-wider group"
+                           className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-extrabold px-8 py-4 rounded-full transition-all shadow-md hover:shadow-xl hover:-translate-y-1 text-sm uppercase tracking-wider group"
                          >
-                           {language === "fr" ? `Soutenir ${project.title.split("(")[0].trim()}` : `Support ${project.title.split("(")[0].trim()}`}
+                           {t.common.supportWork || (language === "fr" ? "Soutenir Notre Travail" : "Support Our Work")}
                            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                          </Link>
                        )}
