@@ -98,7 +98,7 @@ export default async function ProgramsPage() {
             <span className="inline-block py-1 px-3 rounded-full bg-yellow-500/20 text-yellow-400 border border-yellow-500/30 font-bold text-xs uppercase tracking-wider mb-4">
               {t.programs.badge}
             </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-white mb-6 leading-tight uppercase tracking-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold !text-white mb-6 leading-tight tracking-tight">
               {lang === "fr" ? (
                 <>Des Programmes qui <span className="text-yellow-400">Autonomisent</span> les Communautés</>
               ) : (
@@ -130,10 +130,8 @@ export default async function ProgramsPage() {
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#eab308 1px, transparent 1px)', backgroundSize: '24px 24px' }}></div>
         
         <div className="container mx-auto px-4 relative z-10">
-          <div className="relative bg-slate-950 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-20 text-center overflow-hidden border-2 border-slate-800 shadow-2xl">
-            {/* Glowing blur effects */}
-            <div className="absolute -top-24 -right-24 w-96 h-96 bg-blue-600/40 rounded-full blur-[100px] pointer-events-none"></div>
-            <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-yellow-500/20 rounded-full blur-[100px] pointer-events-none"></div>
+          <div className="relative bg-blue-950 rounded-[2rem] md:rounded-[3rem] p-8 md:p-16 lg:p-20 text-center overflow-hidden border-2 border-blue-900 shadow-2xl">
+            
             
             <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
               {/* badge */}
@@ -142,7 +140,7 @@ export default async function ProgramsPage() {
                 {t.programs.ctaBadge}
               </span>
 
-              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black text-white mb-6 leading-tight">
+              <h2 className="text-3xl md:text-5xl lg:text-6xl font-heading font-black !text-white mb-6 leading-tight">
                 {lang === "fr" ? (
                   <>Prêt à faire un impact <span className="text-yellow-400">durable</span> ?</>
                 ) : (

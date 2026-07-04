@@ -19,6 +19,17 @@ const sora = Sora({
 export const metadata: Metadata = {
   title: "Peace and Durable Development (PDD)",
   description: "Empowering communities in Rwanda through conflict resolution, sustainable agriculture, and socio-economic development since 2001.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  manifest: "/site.webmanifest",
 };
 
 export default async function RootLayout({
