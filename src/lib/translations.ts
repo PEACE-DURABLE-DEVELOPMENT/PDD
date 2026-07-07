@@ -376,11 +376,11 @@ const translationsRaw = {
       faqs: [
         {
           q: "Is my donation secure?",
-          a: "Yes. Mobile Money and Bank Transfer transactions are processed directly and securely through your telecommunications provider or banking institution. PDD Rwanda does not directly store or handle your credentials.",
+          a: "Yes. Bank Transfer transactions are processed directly and securely through your banking institution. PDD Rwanda does not directly store or handle your credentials.",
         },
         {
           q: "Will I receive a receipt for my donation?",
-          a: "Absolutely. For both Mobile Money and Bank Transfers, please email your transaction confirmation slip or reference details to info@pddrwanda.org, and our team will issue an official receipt of gratitude.",
+          a: "Absolutely. For Bank Transfers, please email your transaction confirmation slip or reference details to info@pddrwanda.org, and our team will issue an official receipt of gratitude.",
         },
         {
           q: "How are the donation funds allocated?",
@@ -774,11 +774,11 @@ const translationsRaw = {
       faqs: [
         {
           q: "Mon don est-il sécurisé ?",
-          a: "Oui. Les transactions Mobile Money et virements bancaires sont traitées directement et en toute sécurité par votre opérateur de télécommunications ou votre institution bancaire. PDD Rwanda ne stocke ni ne traite directement vos coordonnées bancaires.",
+          a: "Oui. Les virements bancaires sont traités directement et en toute sécurité par votre institution bancaire. PDD Rwanda ne stocke ni ne traite directement vos coordonnées bancaires.",
         },
         {
           q: "Vais-je recevoir un reçu pour mon don ?",
-          a: "Absolument. Pour les Mobile Money comme pour les virements bancaires, veuillez envoyer votre confirmation de transaction ou les détails de référence à info@pddrwanda.org, et notre équipe vous délivrera un reçu officiel de remerciement.",
+          a: "Absolument. Pour les virements bancaires, veuillez envoyer votre confirmation de virement ou les détails de référence à info@pddrwanda.org, et notre équipe vous délivrera un reçu officiel de remerciement.",
         },
         {
           q: "Comment les fonds de don sont-ils alloués ?",

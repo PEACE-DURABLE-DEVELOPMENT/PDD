@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { 
   Heart, 
-  Smartphone, 
   Building, 
   Check, 
   ShieldCheck, 
@@ -20,7 +19,6 @@ export default function DonatePage() {
   const [selectedAmount, setSelectedAmount] = useState<number | "custom">(50);
   const [customAmount, setCustomAmount] = useState<string>("");
   const [frequency, setFrequency] = useState<"once" | "monthly">("once");
-  const [paymentMethod, setPaymentMethod] = useState<"momo" | "bank">("momo");
   const [copiedId, setCopiedId] = useState<string | null>(null);
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -206,226 +204,129 @@ export default function DonatePage() {
                   </div>
                 </div>
 
-                {/* Payment Options Tab Selector */}
-                <div>
-                  <h3 className="font-heading font-bold text-slate-800 text-sm uppercase tracking-wider mb-4">
-                    {t.donate.paymentMethodTitle}
-                  </h3>
-                  <div className="grid grid-cols-2 gap-3.5">
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod("momo")}
-                      className={`py-3.5 px-3 rounded-2xl border font-bold text-sm flex flex-col items-center gap-2 transition-all cursor-pointer ${
-                        paymentMethod === "momo"
-                          ? "bg-slate-900 border-slate-950 text-white shadow-md"
-                          : "bg-surface-alt border-border text-slate-600 hover:border-slate-300 hover:bg-slate-100"
-                      }`}
-                    >
-                      <Smartphone className="w-5 h-5" />
-                      {t.donate.momoTitle}
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => setPaymentMethod("bank")}
-                      className={`py-3.5 px-3 rounded-2xl border font-bold text-sm flex flex-col items-center gap-2 transition-all cursor-pointer ${
-                        paymentMethod === "bank"
-                          ? "bg-slate-900 border-slate-950 text-white shadow-md"
-                          : "bg-surface-alt border-border text-slate-600 hover:border-slate-300 hover:bg-slate-100"
-                      }`}
-                    >
-                      <Building className="w-5 h-5" />
+                {/* Bank Transfer details directly rendered */}
+                <div className="pt-6 border-t border-border space-y-6">
+                  <div className="flex items-center gap-2 mb-2 text-slate-800">
+                    <Building className="w-5 h-5 text-slate-700" />
+                    <h3 className="font-heading font-bold text-sm uppercase tracking-wider">
                       {t.donate.bankTitle}
-                    </button>
+                    </h3>
                   </div>
-                </div>
 
-                {/* Tab Contents */}
-                <div className="pt-4 border-t border-border">
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    {t.donate.bankSubtitle}
+                  </p>
 
-                  {/* TAB 1: MOBILE MONEY */}
-                  {paymentMethod === "momo" && (
-                    <div className="space-y-6">
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {t.donate.momoSubtitle}
-                      </p>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                        {/* MTN Mobile Money Card */}
-                        <div className="border border-yellow-200 bg-yellow-50/20 rounded-2xl p-5 relative overflow-hidden">
-                          <div className="absolute top-0 right-0 w-24 h-24 bg-yellow-400/10 rounded-full blur-xl pointer-events-none" />
-                          <div className="flex items-center gap-3 mb-4">
-                            <span className="w-8 h-8 rounded-full bg-yellow-400 flex items-center justify-center font-black text-[10px] text-slate-900 border border-yellow-500">
-                              MTN
-                            </span>
-                            <div>
-                              <h4 className="font-heading font-bold text-sm text-slate-900">{t.donate.momoPayName}</h4>
-                              <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t.donate.momoPayBadge}</p>
-                            </div>
-                          </div>
-                          
-                          <div className="space-y-3.5">
-                            <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.donate.momoCodeLabel}</p>
-                              <button 
-                                onClick={() => handleCopy("829440", "momocode")}
-                                className="mt-1 flex items-center justify-between w-full bg-white px-3.5 py-2.5 rounded-xl border border-yellow-100 font-mono font-bold text-lg text-slate-900 text-left hover:bg-yellow-50/50 transition-all group cursor-pointer"
-                              >
-                                829440
-                                {copiedId === "momocode" ? (
-                                  <span className="text-xs text-emerald-600 font-sans flex items-center gap-1 font-semibold">
-                                    <Check className="w-3.5 h-3.5" /> {t.donate.copied}
-                                  </span>
-                                ) : (
-                                  <span className="text-xs text-slate-400 group-hover:text-yellow-600 font-sans font-semibold flex items-center gap-1">
-                                    {t.donate.copy}
-                                  </span>
-                                )}
-                              </button>
-                            </div>
-                            <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.donate.registeredLabel}</p>
-                              <p className="text-sm font-semibold text-slate-800 mt-1">Peace and Durable Development</p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* Airtel Money Card */}
-                        <div className="border border-red-100 bg-red-50/10 rounded-2xl p-5 relative overflow-hidden">
-                          <div className="absolute top-0 right-0 w-24 h-24 bg-red-500/5 rounded-full blur-xl pointer-events-none" />
-                          <div className="flex items-center gap-3 mb-4">
-                            <span className="w-8 h-8 rounded-full bg-red-600 flex items-center justify-center font-black text-xs text-white">
-                              A
-                            </span>
-                            <div>
-                              <h4 className="font-heading font-bold text-sm text-slate-900">{t.donate.momoAirtelName}</h4>
-                              <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">{t.donate.momoAirtelBadge}</p>
-                            </div>
-                          </div>
-
-                          <div className="space-y-3.5">
-                            <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.donate.phoneLabel}</p>
-                              <button 
-                                onClick={() => handleCopy("+250725218780", "airtel")}
-                                className="mt-1 flex items-center justify-between w-full bg-white px-3.5 py-2.5 rounded-xl border border-red-50 font-mono font-bold text-base text-slate-900 text-left hover:bg-red-50/20 transition-all group cursor-pointer"
-                              >
-                                (+250) 725 218 780
-                                {copiedId === "airtel" ? (
-                                  <span className="text-xs text-emerald-600 font-sans flex items-center gap-1 font-semibold">
-                                    <Check className="w-3.5 h-3.5" /> {t.donate.copied}
-                                  </span>
-                                ) : (
-                                  <span className="text-xs text-slate-400 group-hover:text-red-500 font-sans font-semibold flex items-center gap-1">
-                                    {t.donate.copy}
-                                  </span>
-                                )}
-                              </button>
-                            </div>
-                            <div>
-                              <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">{t.donate.registeredLabel}</p>
-                              <p className="text-sm font-semibold text-slate-800 mt-1">Peace and Durable Development</p>
-                            </div>
-                          </div>
-                        </div>
+                  <div className="space-y-4">
+                    {/* USD Account Card */}
+                    <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
+                      <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
+                        <span className="text-[11px] font-bold text-yellow-600 bg-yellow-400/10 border border-yellow-400/20 px-2 py-0.5 rounded-full">
+                          {t.donate.bankIntLabel}
+                        </span>
+                        <span className="text-[11px] font-semibold text-slate-500">Bank of Kigali</span>
                       </div>
-
-                      <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-500 leading-relaxed">
-                        {t.donate.momoInstruction}
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
+                          <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                            {t.donate.bankAccountNumber}
+                            <button 
+                              onClick={() => handleCopy("00095-07758364-42", "usdbank")}
+                              className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
+                            >
+                              {copiedId === "usdbank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
+                            </button>
+                          </p>
+                          <p className="font-mono font-semibold text-slate-800 text-[13px]">00095-07758364-42</p>
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                            {t.donate.bankSwift}
+                            <button 
+                              onClick={() => handleCopy("BKIGRWKGl", "swift")}
+                              className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
+                            >
+                              {copiedId === "swift" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
+                            </button>
+                          </p>
+                          <p className="font-mono font-semibold text-slate-800 text-[13px]">BKIGRWKGl</p>
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAddress}</p>
+                          <p className="text-[11px] text-slate-600 leading-normal">
+                            Bank of Kigali Plc, 6122 KN 4 Ave, Kigali, Rwanda
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  )}
 
-                  {/* TAB 2: BANK TRANSFER */}
-                  {paymentMethod === "bank" && (
-                    <div className="space-y-6">
-                      <p className="text-sm text-slate-600 leading-relaxed">
-                        {t.donate.bankSubtitle}
-                      </p>
-
-                      <div className="space-y-4">
-                        {/* USD Account Card */}
-                        <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
-                          <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
-                            <span className="text-[11px] font-bold text-yellow-600 bg-yellow-400/10 border border-yellow-400/20 px-2 py-0.5 rounded-full">
-                              {t.donate.bankIntLabel}
-                            </span>
-                            <span className="text-[11px] font-semibold text-slate-500">Bank of Kigali</span>
-                          </div>
-                          
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                            <div>
-                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
-                              <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
-                            </div>
-                            <div>
-                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                                {t.donate.bankAccountNumber}
-                                <button 
-                                  onClick={() => handleCopy("00095-07758364-42", "usdbank")}
-                                  className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
-                                >
-                                  {copiedId === "usdbank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
-                                </button>
-                              </p>
-                              <p className="font-mono font-semibold text-slate-800 text-[13px]">00095-07758364-42</p>
-                            </div>
-                            <div>
-                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                                {t.donate.bankSwift}
-                                <button 
-                                  onClick={() => handleCopy("BKIGRWKGl", "swift")}
-                                  className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
-                                >
-                                  {copiedId === "swift" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
-                                </button>
-                              </p>
-                              <p className="font-mono font-semibold text-slate-800 text-[13px]">BKIGRWKGl</p>
-                            </div>
-                            <div>
-                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAddress}</p>
-                              <p className="text-[11px] text-slate-600 leading-normal">
-                                Bank of Kigali Plc, 6122 KN 4 Ave, Kigali, Rwanda
-                              </p>
-                            </div>
-                          </div>
-                        </div>
-
-                        {/* RWF Account Card */}
-                        <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
-                          <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
-                            <span className="text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/20 px-2 py-0.5 rounded-full">
-                              {t.donate.bankLocalLabel}
-                            </span>
-                            <span className="text-[11px] font-semibold text-slate-500">Bank of Kigali</span>
-                          </div>
-
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
-                            <div>
-                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
-                              <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
-                            </div>
-                            <div>
-                              <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
-                                {t.donate.bankAccountNumber}
-                                <button 
-                                  onClick={() => handleCopy("00095-07758364-41", "rwfbank")}
-                                  className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
-                                >
-                                  {copiedId === "rwfbank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
-                                </button>
-                              </p>
-                              <p className="font-mono font-semibold text-slate-800 text-[13px]">00095-07758364-41</p>
-                            </div>
-                          </div>
-                        </div>
+                    {/* RWF Account Card - BK */}
+                    <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
+                      <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
+                        <span className="text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/20 px-2 py-0.5 rounded-full">
+                          {t.donate.bankLocalLabel} (BK)
+                        </span>
+                        <span className="text-[11px] font-semibold text-slate-500">Bank of Kigali</span>
                       </div>
 
-                      <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-500 leading-relaxed">
-                        {t.donate.bankNote}
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
+                          <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                            {t.donate.bankAccountNumber}
+                            <button 
+                              onClick={() => handleCopy("00095-07758364-41", "rwfbank")}
+                              className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
+                            >
+                              {copiedId === "rwfbank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
+                            </button>
+                          </p>
+                          <p className="font-mono font-semibold text-slate-800 text-[13px]">00095-07758364-41</p>
+                        </div>
                       </div>
                     </div>
-                  )}
 
+                    {/* RWF Account Card - Ecobank */}
+                    <div className="border border-border bg-surface-alt rounded-xl p-4 relative">
+                      <div className="flex items-center justify-between mb-3 border-b border-border/80 pb-2">
+                        <span className="text-[11px] font-bold text-secondary bg-secondary/10 border border-secondary/20 px-2 py-0.5 rounded-full">
+                          {language === "fr" ? "RWF (Virement Local Ecobank)" : "RWF (Local Ecobank Transfer)"}
+                        </span>
+                        <span className="text-[11px] font-semibold text-slate-500">Ecobank Rwanda</span>
+                      </div>
+
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider">{t.donate.bankAccountName}</p>
+                          <p className="font-semibold text-slate-800 text-[13px]">PEACE AND DURABLE DEVELOPMENT</p>
+                        </div>
+                        <div>
+                          <p className="text-[9px] font-bold text-slate-400 uppercase tracking-wider flex items-center justify-between">
+                            {t.donate.bankAccountNumber}
+                            <button 
+                              onClick={() => handleCopy("6852002782", "ecobank")}
+                              className="text-primary text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
+                            >
+                              {copiedId === "ecobank" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
+                            </button>
+                          </p>
+                          <p className="font-mono font-semibold text-slate-800 text-[13px]">6852002782</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="bg-slate-50 border border-slate-200 rounded-xl p-4 text-xs text-slate-500 leading-relaxed">
+                    {t.donate.bankNote}
+                  </div>
                 </div>
               </div>
             </div>
