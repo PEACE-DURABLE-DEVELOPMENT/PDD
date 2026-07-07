@@ -1,5 +1,5 @@
 import SmartImage from "@/components/SmartImage";
-import { Heart, Users, TreePine, Handshake } from "lucide-react";
+import { Heart, Users, TreePine, Handshake, Target, Compass } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
 import TeamSlider from "@/components/TeamSlider";
@@ -18,8 +18,8 @@ export default async function AboutPage() {
     {
       name: "Twizerimana Eugene",
       role: lang === "fr" ? "Directeur Exécutif" : "Executive Director",
-      image: "/boss.webp",
-      description: lang === "fr" 
+      image: "/boss.png",
+      description: lang === "fr"
         ? "Dirige la vision stratégique de PDD Rwanda, supervisant toutes les initiatives de consolidation de la paix et de développement, et établissant des partenariats mondiaux pour autonomiser les communautés locales."
         : "Leads PDD Rwanda's strategic vision, overseeing all peacebuilding and development initiatives, and building global partnerships to empower local communities.",
     },
@@ -65,175 +65,242 @@ export default async function AboutPage() {
     },
   ];
 
-  return (
-    <div className="flex flex-col min-h-screen pt-20">
-      {/* Hero */}
-      <section className="bg-surface-alt py-5 md:py-6 border-b border-border">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-block py-1 px-3 rounded-full bg-accent/15 text-accent font-bold text-xs mb-3 uppercase tracking-wider">
-              {t.about.aboutUsBadge}
-            </span>
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold text-ink-heading mb-3">
-              {t.about.title}
-            </h1>
-            <p className="text-base md:text-lg text-ink-body max-w-xl mx-auto leading-relaxed">
-              {t.about.tagline}
-            </p>
-          </div>
-        </div>
-      </section>
+  const values = [
+    { title: t.about.val1Title, desc: t.about.val1Desc, icon: <Handshake className="w-7 h-7" />, color: "text-primary bg-primary/10" },
+    { title: t.about.val2Title, desc: t.about.val2Desc, icon: <Users className="w-7 h-7" />, color: "text-accent bg-accent/10" },
+    { title: t.about.val3Title, desc: t.about.val3Desc, icon: <TreePine className="w-7 h-7" />, color: "text-secondary bg-secondary/10" },
+    { title: t.about.val4Title, desc: t.about.val4Desc, icon: <Heart className="w-7 h-7" />, color: "text-primary bg-primary/10" },
+  ];
 
-      {/* Main Content */}
-      <section className="py-20 bg-surface">
-        <div className="container mx-auto px-4 flex flex-col gap-20 lg:gap-28">
-          
-          {/* Row 1: Image on Left, Words on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            {/* Image 1 */}
-            <div className="lg:col-span-5 w-full">
-              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm">
-                <SmartImage 
-                  cloudinaryUrl="/peace.webp"
-                  label="About Us — community gathering or founders" 
-                  aspectRatio="4/3" 
-                  className="w-full h-full hover:scale-[1.03] transition-transform duration-500"
-                />
+  const specificObjectives = [
+    t.about.specificObjective1,
+    t.about.specificObjective2,
+    t.about.specificObjective3,
+    t.about.specificObjective4,
+  ];
+
+  const strategies = [
+    t.about.strategy1,
+    t.about.strategy2,
+    t.about.strategy3,
+    t.about.strategy4,
+    t.about.strategy5,
+    t.about.strategy6,
+  ];
+
+  return (
+    <div className="flex flex-col min-h-screen pt-20 bg-surface">
+
+      {/* ── MODERN SPLIT HERO / STORY SECTION ── */}
+      <section className="relative bg-surface-alt border-b border-border overflow-hidden py-12 md:py-16">
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-0 left-0 w-72 h-72 bg-primary/5 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/5 rounded-full translate-x-1/3 translate-y-1/3 blur-3xl pointer-events-none" />
+        
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center max-w-6xl mx-auto">
+            
+            {/* Left Column: Content */}
+            <div className="lg:col-span-7 flex flex-col gap-6">
+              <div>
+                <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-accent/15 text-accent font-semibold text-xs uppercase tracking-widest mb-4">
+                  {t.about.aboutUsBadge}
+                </span>
+                <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-ink-heading mb-4 leading-tight">
+                  {t.about.title}
+                </h1>
+                <p className="text-lg md:text-xl text-accent font-medium italic">
+                  &ldquo;{t.about.tagline}&rdquo;
+                </p>
               </div>
-            </div>
-            {/* Words 1 */}
-            <div className="lg:col-span-7 prose prose-lg prose-slate max-w-none text-ink-body text-justify">
-              <p>
+              
+              <div className="h-px bg-accent/30 w-24"></div>
+              
+              <p className="text-ink-body text-base md:text-lg leading-relaxed">
                 {t.about.para1}
               </p>
               
-              <p className="text-xl font-medium text-ink-heading border-l-4 border-primary pl-6 py-2 my-8 italic">
-                {t.about.conviction}
-              </p>
+              <div className="border-l-4 border-accent pl-4 py-1">
+                <p className="text-sm font-semibold text-ink-heading uppercase tracking-wider mb-1">
+                  {lang === "fr" ? "Notre conviction" : "Our conviction"}
+                </p>
+                <p className="text-ink-body leading-relaxed">
+                  {t.about.conviction}
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Row 2: Words on Left, Image on Right */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
-            {/* Image 2 (ordered last on desktop, stacks first on mobile due to source order) */}
-            <div className="lg:col-span-5 lg:order-last w-full">
-              <div className="aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-sm">
-                <SmartImage 
-                  cloudinaryUrl="/hero.webp"
-                  label="About Us — impactful field work" 
-                  aspectRatio="4/3" 
-                  className="w-full h-full hover:scale-[1.03] transition-transform duration-500"
+            {/* Right Column: Image */}
+            <div className="lg:col-span-5 relative">
+              <div className="aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-xl border border-white/50">
+                <SmartImage
+                  cloudinaryUrl="/peace.webp"
+                  label="PDD Rwanda — community gathering"
+                  aspectRatio="4/3"
+                  className="w-full h-full hover:scale-[1.03] transition-transform duration-700 object-cover"
                 />
               </div>
+              {/* Floating badge */}
+              <div className="absolute -bottom-5 -right-4 bg-surface rounded-2xl shadow-xl border border-border px-5 py-3 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent flex-shrink-0">
+                  <Heart className="w-5 h-5" />
+                </div>
+                <div>
+                  <p className="text-xs text-ink-body font-medium">{lang === "fr" ? "Fondée en" : "Founded"}</p>
+                  <p className="text-lg font-heading font-bold text-ink-heading leading-none">2001</p>
+                </div>
+              </div>
             </div>
-            {/* Words 2 */}
-            <div className="lg:col-span-7 prose prose-lg prose-slate max-w-none text-ink-body text-justify">
-              <h2 className="text-2xl font-heading font-bold text-ink-heading mb-4">{t.about.rootCausesTitle}</h2>
-              <p>
-                {t.about.rootCausesDesc}
-              </p>
-              <ul className="space-y-3 my-6 list-disc pl-5">
-                <li><strong>{t.about.rootCause1Title}</strong> — {t.about.rootCause1Desc}</li>
-                <li><strong>{t.about.rootCause2Title}</strong> — {t.about.rootCause2Desc}</li>
-                <li><strong>{t.about.rootCause3Title}</strong> — {t.about.rootCause3Desc}</li>
-              </ul>
 
-              <h2 className="text-2xl font-heading font-bold text-ink-heading mt-12 mb-4">{t.about.approachTitle}</h2>
-              <p>
-                {t.about.approachPara1}
-              </p>
-              <p className="mt-4">
-                {t.about.approachPara2}
-              </p>
-              <p className="mt-4">
-                {t.about.approachPara3}
-              </p>
-            </div>
           </div>
-
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="py-24 bg-surface-alt border-y border-border">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
-            <div className="bg-surface p-10 rounded-3xl shadow-sm border border-border flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mb-6">
-                <Heart className="w-8 h-8" />
+      {/* ── MISSION & VISION ── */}
+      <section className="py-20 md:py-24 bg-surface border-b border-border">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {/* Mission */}
+            <div className="relative bg-surface-alt rounded-3xl border border-border p-10 flex flex-col gap-5 overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-2xl pointer-events-none" />
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                <Heart className="w-7 h-7" />
               </div>
-              <h2 className="text-2xl font-heading font-bold text-ink-heading mb-4">{t.about.missionTitle}</h2>
-              <p className="text-ink-body leading-relaxed">
-                {t.about.missionDesc}
-              </p>
+              <div>
+                <h2 className="text-2xl font-heading font-bold text-ink-heading mb-3">{t.about.missionTitle}</h2>
+                <p className="text-ink-body leading-relaxed">{t.about.missionDesc}</p>
+              </div>
             </div>
-            <div className="bg-surface p-10 rounded-3xl shadow-sm border border-border flex flex-col items-center text-center">
-              <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-secondary mb-6">
-                <Users className="w-8 h-8" />
+            {/* Vision */}
+            <div className="relative bg-surface-alt rounded-3xl border border-border p-10 flex flex-col gap-5 overflow-hidden group hover:shadow-lg transition-shadow duration-300">
+              <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/5 rounded-full translate-x-1/2 -translate-y-1/2 blur-2xl pointer-events-none" />
+              <div className="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                <Users className="w-7 h-7" />
               </div>
-              <h2 className="text-2xl font-heading font-bold text-ink-heading mb-4">{t.about.visionTitle}</h2>
-              <p className="text-ink-body leading-relaxed">
-                {t.about.visionDesc}
-              </p>
+              <div>
+                <h2 className="text-2xl font-heading font-bold text-ink-heading mb-3">{t.about.visionTitle}</h2>
+                <p className="text-ink-body leading-relaxed">{t.about.visionDesc}</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Core Values */}
-      <section className="py-24 bg-surface">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
+      {/* ── CORE VALUES ── */}
+      <section className="py-20 md:py-28 bg-surface">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest mb-4">
+              {lang === "fr" ? "Ce qui nous guide" : "What guides us"}
+            </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink-heading mb-4">{t.about.valuesTitle}</h2>
-            <p className="text-ink-body max-w-2xl mx-auto text-lg">
-              {t.about.valuesSub}
-            </p>
+            <p className="text-ink-body max-w-xl mx-auto text-lg">{t.about.valuesSub}</p>
           </div>
-          
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 hide-scrollbar">
-            {[
-              {
-                title: t.about.val1Title,
-                desc: t.about.val1Desc,
-                icon: <Handshake className="w-8 h-8" />,
-                color: "text-primary bg-primary/10"
-              },
-              {
-                title: t.about.val2Title,
-                desc: t.about.val2Desc,
-                icon: <Users className="w-8 h-8" />,
-                color: "text-accent bg-accent/10"
-              },
-              {
-                title: t.about.val3Title,
-                desc: t.about.val3Desc,
-                icon: <TreePine className="w-8 h-8" />,
-                color: "text-secondary bg-secondary/10"
-              },
-              {
-                title: t.about.val4Title,
-                desc: t.about.val4Desc,
-                icon: <Heart className="w-8 h-8" />,
-                color: "text-primary bg-primary/10"
-              }
-            ].map((value, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center p-8 bg-surface-alt rounded-2xl border border-border w-[85vw] md:w-auto shrink-0 snap-center">
-                <div className={`w-16 h-16 rounded-full flex items-center justify-center mb-6 ${value.color}`}>
+
+          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-6 px-6 md:mx-auto md:px-0 md:grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto hide-scrollbar">
+            {values.map((value, idx) => (
+              <div
+                key={idx}
+                className="flex flex-col items-center text-center p-8 bg-surface-alt rounded-3xl border border-border w-[80vw] md:w-auto shrink-0 snap-center hover:shadow-md hover:-translate-y-1 transition-all duration-300"
+              >
+                <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-5 ${value.color}`}>
                   {value.icon}
                 </div>
-                <h3 className="text-xl font-heading font-semibold text-ink-heading mb-3">{value.title}</h3>
-                <p className="text-ink-body">{value.desc}</p>
+                <h3 className="text-lg font-heading font-bold text-ink-heading mb-2">{value.title}</h3>
+                <p className="text-ink-body text-sm leading-relaxed">{value.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 bg-surface-alt border-t border-border">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <span className="inline-block py-1 px-3 rounded-full bg-primary/10 text-primary font-bold text-sm mb-4 uppercase tracking-wider">
+      {/* ── OBJECTIVES & STRATEGIES ── */}
+      <section className="py-20 md:py-28 bg-surface-alt border-y border-border">
+        <div className="container mx-auto px-6">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-start">
+
+            {/* Left col: image + global objective */}
+            <div className="flex flex-col gap-8">
+              {/* Global Objective card */}
+              <div className="relative bg-primary rounded-3xl p-8 overflow-hidden text-white">
+                <div className="absolute top-0 right-0 w-48 h-48 bg-white/5 rounded-full translate-x-1/3 -translate-y-1/3 blur-2xl pointer-events-none" />
+                <div className="relative z-10 flex flex-col gap-4">
+                  <div className="w-12 h-12 rounded-xl bg-white/15 flex items-center justify-center flex-shrink-0">
+                    <Target className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-xs font-bold uppercase tracking-widest text-white/70">
+                    {t.about.objectivesTitle}
+                  </h3>
+                  <p className="text-white/95 text-lg leading-relaxed font-medium">
+                    {t.about.globalObjectiveDesc}
+                  </p>
+                </div>
+              </div>
+
+              {/* Field image */}
+              <div className="aspect-[4/3] w-full rounded-3xl overflow-hidden shadow-lg">
+                <SmartImage
+                  cloudinaryUrl="/hero.webp"
+                  label="PDD Rwanda — field work"
+                  aspectRatio="4/3"
+                  className="w-full h-full hover:scale-[1.03] transition-transform duration-700"
+                />
+              </div>
+            </div>
+
+            {/* Right col: specific objectives + strategies */}
+            <div className="flex flex-col gap-10">
+              {/* Specific Objectives */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center text-secondary flex-shrink-0">
+                    <Target className="w-5 h-5" />
+                  </div>
+                  <h2 className="text-xl font-heading font-bold text-ink-heading">
+                    {lang === "fr" ? "Objectifs Spécifiques" : "Specific Objectives"}
+                  </h2>
+                </div>
+                <ul className="flex flex-col gap-3">
+                  {specificObjectives.map((obj, idx) => (
+                    <li key={idx} className="flex items-start gap-3 bg-surface rounded-2xl border border-border p-4">
+                      <span className="w-6 h-6 rounded-full bg-secondary/10 text-secondary text-xs font-bold flex items-center justify-center flex-shrink-0 mt-0.5">
+                        {idx + 1}
+                      </span>
+                      <p className="text-ink-body text-sm leading-relaxed">{obj}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Strategies */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                    <Compass className="w-5 h-5" />
+                  </div>
+                  <h2 className="text-xl font-heading font-bold text-ink-heading">
+                    {t.about.strategiesTitle}
+                  </h2>
+                </div>
+                <ul className="flex flex-col gap-3">
+                  {strategies.map((strategy, idx) => (
+                    <li key={idx} className="flex items-start gap-3">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+                      <p className="text-ink-body text-sm leading-relaxed">{strategy}</p>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── TEAM ── */}
+      <section className="py-20 md:py-28 bg-surface">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-primary/10 text-primary font-semibold text-xs uppercase tracking-widest mb-4">
               {t.about.teamBadge}
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink-heading mb-4">
@@ -247,6 +314,7 @@ export default async function AboutPage() {
           <TeamSlider teamMembers={teamMembers} photoPendingText={t.common.photoPending} />
         </div>
       </section>
+
     </div>
   );
 }

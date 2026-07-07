@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
 import HomeProjectsSlider from "@/components/HomeProjectsSlider";
+import HeroSlider from "@/components/HeroSlider";
 
 export default async function Home() {
   const cookieStore = await cookies();
@@ -48,44 +49,13 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative w-full h-[80vh] min-h-[600px] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <SmartImage
-            cloudinaryUrl="/hero.webp"
-            label="Hero — community members or agricultural beneficiaries working together"
-            aspectRatio="16/9"
-            className="w-full h-full object-cover rounded-none"
-          />
-          <div className="absolute inset-0 bg-black/80 z-10" />
-        </div>
-        
-        <div className="container mx-auto px-4 relative z-20">
-          <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-6 leading-tight">
-              <span className="block text-yellow-400">{t.home.heroTitle1}</span>
-              <span className="block text-white">{t.home.heroTitle2}</span>
-            </h1>
-            <p className="text-base sm:text-xl md:text-2xl text-slate-200 mb-8 max-w-5xl mx-auto leading-relaxed">
-              <span className="block">{t.home.heroSub1}</span>
-              <span className="block">{t.home.heroSub2}</span>
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
-              <Link
-                href="/projects"
-                className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
-              >
-                {t.home.ourProjects}
-              </Link>
-              <Link
-                href="/contact"
-                className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
-              >
-                {t.common.supportWork}
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Hero Section */}
+      <HeroSlider
+        heroTitle1={t.home.heroTitle1}
+        heroTitle2={t.home.heroTitle2}
+        ourProjectsText={t.home.ourProjects}
+        supportWorkText={t.common.supportWork}
+      />
 
       {/* Who We Are */}
       <section className="py-24 bg-white relative overflow-hidden">
@@ -105,19 +75,21 @@ export default async function Home() {
             </div>
             
             {/* Content Side */}
-            <div className="flex flex-col items-start text-left">
+            <div className="flex flex-col items-start text-left lg:pr-12">
               <span className="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-600 font-bold text-sm mb-6 uppercase tracking-wider">
                 {t.home.whoWeAreBadge}
               </span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 leading-tight">
                 {t.home.whoWeAreTitle}<span className="text-yellow-500">{t.home.whoWeAreTitleAccent}</span>
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6 text-justify">
+              <p className={`text-lg text-slate-600 leading-relaxed text-justify ${t.home.whoWeArePara2 ? 'mb-6' : 'mb-10'}`}>
                 {t.home.whoWeArePara1}
               </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-10 text-justify">
-                {t.home.whoWeArePara2}
-              </p>
+              {t.home.whoWeArePara2 && (
+                <p className="text-lg text-slate-600 leading-relaxed mb-10 text-justify">
+                  {t.home.whoWeArePara2}
+                </p>
+              )}
               <Link
                 href="/about"
                 className="inline-flex items-center gap-3 bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
@@ -257,8 +229,8 @@ export default async function Home() {
               {/* Main Image Card Wrapper */}
               <div className="relative bg-white p-4 rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden z-10">
                 <SmartImage
-                  cloudinaryUrl="/maize.webp"
-                  label="PDD Burera beneficiary harvesting maize"
+                  cloudinaryUrl="/muzehe.png"
+                  label="Jean Damascene, potato farmer in Burera District"
                   aspectRatio="4/5"
                   className="w-full h-full rounded-[1.5rem] object-cover"
                 />

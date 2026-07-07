@@ -18,7 +18,7 @@ const sora = Sora({
 
 export const metadata: Metadata = {
   title: "Peace and Durable Development (PDD)",
-  description: "Empowering communities in Rwanda through conflict resolution, sustainable agriculture, and socio-economic development since 2001.",
+  description: "Peace and Durable Development (PDD) Rwanda: Fostering lasting peace, unity, and sustainable community empowerment in Rwanda.",
   icons: {
     icon: [
       { url: "/favicon.ico" },

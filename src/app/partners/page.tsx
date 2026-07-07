@@ -19,30 +19,35 @@ export default function PartnersPage() {
       name: "MCC",
       logo: "/mcc.png",
       description: t.partners.items.mcc,
+      website: "https://mcc.org",
     },
     {
       id: "pdn",
       name: "PDN",
       logo: "/pdn.png",
       description: t.partners.items.pdn,
+      website: "https://pdnrwanda.org",
     },
     {
       id: "wfp",
       name: "WFP",
       logo: "/wfp.png",
       description: t.partners.items.wfp,
+      website: "https://www.wfp.org",
     },
     {
       id: "cfb",
-      name: "CFB",
+      name: "CFGB",
       logo: "/cfb.png",
       description: t.partners.items.cfb,
+      website: "https://foodgrainsbank.ca",
     },
     {
       id: "might-water",
       name: "Might Water",
       logo: "/water.webp",
       description: t.partners.items.water,
+      website: "https://mightywater.org/",
     },
     {
       id: "jadf",
@@ -55,12 +60,14 @@ export default function PartnersPage() {
       name: "Burera District",
       logo: "/burera.webp",
       description: t.partners.items.burera,
+      website: "https://www.burera.gov.rw",
     },
     {
       id: "nord",
       name: "Northern Province",
       logo: "/nord.webp",
       description: t.partners.items.nord,
+      website: "https://www.northernprovince.gov.rw",
     },
   ];
 
@@ -150,9 +157,25 @@ export default function PartnersPage() {
                           animate={{ opacity: 1, height: "auto", marginTop: 8 }}
                           exit={{ opacity: 0, height: 0, marginTop: 0 }}
                           transition={{ duration: 0.3 }}
-                          className="text-slate-600 text-center text-sm leading-relaxed"
+                          className="text-slate-600 text-center text-sm leading-relaxed flex flex-col items-center gap-3"
                         >
-                          {partner.description}
+                          <div>{partner.description}</div>
+                          {partner.website ? (
+                            <a
+                              href={partner.website}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              onClick={(e) => e.stopPropagation()}
+                              className="mt-2 inline-flex items-center gap-1.5 bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-4 py-2 rounded-full font-bold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm"
+                            >
+                              {t.common.learnMore}
+                              <ArrowRight className="w-3.5 h-3.5" />
+                            </a>
+                          ) : (
+                            <span className="text-slate-400 text-xs italic mt-2">
+                              {language === "fr" ? "Site web non disponible" : "Website not available"}
+                            </span>
+                          )}
                         </motion.div>
                       ) : (
                         <motion.div
@@ -175,7 +198,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-[#4a90e2] border-t-4 border-yellow-500 relative overflow-hidden">
+      <section className="py-24 bg-blue-950 border-t-4 border-yellow-500 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">

@@ -1,8 +1,8 @@
 import StatsCounter from "@/components/StatsCounter";
 import RippleEffectPathway from "@/components/RippleEffectPathway";
 import GalleryFilterable from "@/components/GalleryFilterable";
-import { getTestimonials, getGalleryImages } from "@/lib/airtable";
-import { Quote, Sprout, Users, Coins, Droplets, Gift } from "lucide-react";
+import { getGalleryImages } from "@/lib/airtable";
+import { Sprout, Users, Coins, Droplets, Gift } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
 
@@ -16,7 +16,6 @@ export default async function ImpactPage() {
   const lang = (cookieStore.get("lang")?.value || "en") as "en" | "fr";
   const t = translations[lang];
 
-  const testimonials = await getTestimonials();
   const galleryImages = await getGalleryImages();
 
   return (
@@ -110,51 +109,6 @@ export default async function ImpactPage() {
 
           <div className="max-w-5xl mx-auto">
             <RippleEffectPathway />
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials / Voices from the Community */}
-      <section className="py-24 bg-white border-y border-slate-100 relative">
-        <div className="absolute inset-0 opacity-[0.1]" style={{ backgroundImage: 'radial-gradient(#eab308 1px, transparent 1px)', backgroundSize: '36px 36px' }} />
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="text-center max-w-2xl mx-auto mb-16">
-            <span className="inline-block py-1 px-3 rounded-full bg-yellow-400/10 text-yellow-700 font-bold text-xs uppercase tracking-wider mb-4">
-              {t.impact.storiesBadge}
-            </span>
-            <h2 className="text-3xl md:text-4xl font-heading font-extrabold text-slate-900 mb-4">
-              {t.impact.storiesTitle}
-            </h2>
-            <p className="text-slate-500 text-lg">
-              {t.impact.storiesSub}
-            </p>
-          </div>
-
-          <div className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 gap-8 max-w-5xl mx-auto hide-scrollbar">
-            {testimonials.map((testimonial) => {
-              return (
-                <div
-                  key={testimonial.id}
-                  className="bg-slate-50/50 p-8 md:p-10 rounded-3xl border border-slate-100 shadow-sm flex flex-col justify-between relative hover:shadow-md transition-all duration-300 w-[85vw] md:w-auto shrink-0 snap-center"
-                >
-                  <Quote className="absolute top-8 right-8 w-12 h-12 text-yellow-400/10" />
-                  
-                  <p className="text-slate-700 text-lg md:text-xl font-medium leading-relaxed mb-8 italic relative z-10 text-justify">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  
-                  <div className="flex flex-col border-t border-slate-100/80 pt-6 mt-auto">
-                    <h4 className="font-heading font-bold text-slate-900 text-base">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-sm text-yellow-600 font-semibold mt-0.5">
-                      {testimonial.location}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
           </div>
         </div>
       </section>

@@ -52,7 +52,7 @@ export default function ProjectsClient() {
 
   const projects: Project[] = [
     {
-      id: "peace-promotion",
+      id: "peacebuilding",
       title: t.projects.items.peace.title,
       shortDescription: t.projects.items.peace.short,
       fullDescription: t.projects.items.peace.full,

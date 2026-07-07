@@ -42,7 +42,7 @@ export default function TeamSlider({ teamMembers, photoPendingText }: TeamSlider
       {/* Cards Scroll Container */}
       <div 
         ref={scrollRef}
-        className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto hide-scrollbar"
+        className="flex overflow-x-auto snap-x snap-mandatory pb-8 -mx-4 px-4 md:mx-auto md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto hide-scrollbar"
       >
         {teamMembers.map((member, idx) => (
           <div 
@@ -50,19 +50,17 @@ export default function TeamSlider({ teamMembers, photoPendingText }: TeamSlider
             className="flex flex-col bg-surface rounded-2xl border border-border overflow-hidden hover:shadow-lg transition-all duration-300 group hover:-translate-y-1 w-[85vw] md:w-auto shrink-0 snap-center"
           >
             {/* Photo Placeholder / Image */}
-            <div className="relative aspect-square w-full bg-slate-50 border-b border-border overflow-hidden">
+            <div className="relative w-44 h-44 mx-auto mt-8 rounded-full bg-slate-50 border-4 border-white shadow-md overflow-hidden z-10 flex-shrink-0">
               {member.image ? (
                 <SmartImage
                   cloudinaryUrl={member.image}
                   label={`${member.name} — ${member.role}`}
                   aspectRatio="1/1"
-                  className="w-full h-full"
+                  className="w-full h-full object-cover"
                 />
               ) : (
-                <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 p-6">
-                  <div className="w-20 h-20 rounded-full bg-slate-100 flex items-center justify-center mb-3 group-hover:scale-105 transition-transform duration-300 border border-slate-200">
-                    <User className="w-10 h-10 text-slate-400" />
-                  </div>
+                <div className="w-full h-full flex flex-col items-center justify-center text-slate-400 bg-slate-100">
+                  <User className="w-14 h-14 text-slate-400 mb-1 group-hover:scale-105 transition-transform duration-300" />
                   <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase">
                     {photoPendingText}
                   </span>
@@ -71,7 +69,7 @@ export default function TeamSlider({ teamMembers, photoPendingText }: TeamSlider
             </div>
             
             {/* Content */}
-            <div className="p-6 flex flex-col flex-grow">
+            <div className="px-6 pb-6 pt-4 flex flex-col flex-grow items-center text-center">
               <h3 className="text-xl font-heading font-bold text-ink-heading mb-1 group-hover:text-primary transition-colors duration-200">
                 {member.name}
               </h3>
