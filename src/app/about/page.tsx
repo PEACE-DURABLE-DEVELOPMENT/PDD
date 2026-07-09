@@ -1,8 +1,9 @@
 import SmartImage from "@/components/SmartImage";
-import { Heart, Users, TreePine, Handshake, Target, Compass } from "lucide-react";
+import { Heart, Users, TreePine, Handshake, Target, Compass, ArrowRight } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
 import TeamSlider from "@/components/TeamSlider";
+import Link from "next/link";
 
 export const metadata = {
   title: "About Us | PDD Rwanda",
@@ -127,6 +128,16 @@ export default async function AboutPage() {
                 <p className="text-ink-body leading-relaxed">
                   {t.about.conviction}
                 </p>
+              </div>
+
+              <div className="mt-4">
+                <Link
+                  href="/founder-message"
+                  className="inline-flex items-center gap-3 bg-surface-alt border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-full font-bold text-sm transition-all shadow-sm hover:shadow-md group"
+                >
+                  {t.about.readFounderMessage}
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             </div>
 

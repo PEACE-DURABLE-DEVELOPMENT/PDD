@@ -91,7 +91,7 @@ export default async function Home() {
                 </p>
               )}
               <Link
-                href="/about"
+                href="/founder-message"
                 className="inline-flex items-center gap-3 bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
               >
                 {t.common.learnMore}
