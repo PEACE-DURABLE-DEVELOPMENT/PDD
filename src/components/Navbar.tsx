@@ -76,7 +76,7 @@ export default function Navbar() {
           {/* Support Work Button - Hidden on mobile screen headers to prevent crowding */}
           <Link
             href="/donate"
-            className="hidden sm:inline-block bg-blue-600 text-black hover:bg-blue-700 px-6 py-2.5 rounded-full font-bold transition-colors shadow-sm"
+            className="hidden sm:inline-block bg-yellow-400 text-black hover:bg-yellow-500 px-6 py-2.5 rounded-full font-bold transition-colors shadow-sm"
           >
             {t.common.supportWork}
           </Link>
@@ -160,7 +160,7 @@ export default function Navbar() {
             <Link
               href="/donate"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full bg-blue-600 text-black hover:bg-blue-700 py-3 rounded-full font-bold text-center transition-colors shadow-sm block text-sm uppercase tracking-wider"
+              className="w-full bg-yellow-400 text-black hover:bg-yellow-500 py-3 rounded-full font-bold text-center transition-colors shadow-sm block text-sm uppercase tracking-wider"
             >
               {t.common.supportWork}
             </Link>

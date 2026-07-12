@@ -35,7 +35,7 @@ export default async function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold !text-blue-600 mb-6">
+            <h3 className="font-heading font-semibold !text-yellow-400 mb-6">
               {t.footer.quickLinks}
             </h3>
             <ul className="space-y-4 text-sm">
@@ -69,7 +69,7 @@ export default async function Footer() {
 
           {/* Contact */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-heading font-semibold !text-blue-600 mb-6">
+            <h3 className="font-heading font-semibold !text-yellow-400 mb-6">
               {t.footer.contactUs}
             </h3>
             <div className="space-y-4 text-sm">

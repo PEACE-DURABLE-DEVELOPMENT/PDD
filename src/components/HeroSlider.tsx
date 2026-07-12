@@ -65,20 +65,20 @@ export default function HeroSlider({
 
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-5xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-heading font-bold mb-8 leading-tight">
-            <span className="block text-blue-600">{heroTitle1}</span>
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-tight">
+            <span className="block text-white">{heroTitle1}</span>
             <span className="block text-white">{heroTitle2}</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
             <Link
               href="/projects"
-              className="bg-blue-600 text-slate-950 hover:bg-blue-700 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
+              className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
             >
               {ourProjectsText}
             </Link>
             <Link
               href="/contact"
-              className="border-2 border-blue-600 text-white hover:bg-blue-600/10 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
+              className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg text-center transition-all shadow-sm"
             >
               {supportWorkText}
             </Link>
