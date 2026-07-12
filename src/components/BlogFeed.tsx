@@ -87,7 +87,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
                 className={cn(
                   "px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border cursor-pointer",
                   isActive
-                    ? "bg-blue-600 border-blue-600 text-slate-900 shadow-sm scale-105"
+                    ? "bg-blue-600 border-blue-600 text-white shadow-sm scale-105"
                     : "bg-slate-50 border-slate-100 text-slate-600 hover:border-slate-200 hover:text-slate-900"
                 )}
               >
@@ -149,7 +149,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
 
             {/* Content side */}
             <div className="lg:col-span-5 flex flex-col justify-center h-full">
-              <span className="text-blue-700 text-xxs font-extrabold uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded-full self-start mb-4">
+              <span className="text-white text-xxs font-extrabold uppercase tracking-widest bg-blue-600 border border-blue-600 shadow-sm px-2.5 py-1 rounded-full self-start mb-4">
                 {translateCategory(getPostCategory(featuredPost), language)}
               </span>
 
@@ -186,7 +186,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
 
                 <Link
                   href={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center gap-2 bg-blue-600 text-slate-950 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-blue-700 hover:shadow-md transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-white px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-blue-700 hover:shadow-md transition-all duration-300"
                 >
                   <span>{language === "fr" ? "Lire l'histoire complète" : "Read Full Story"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />

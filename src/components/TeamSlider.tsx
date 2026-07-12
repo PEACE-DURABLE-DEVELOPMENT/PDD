@@ -73,7 +73,7 @@ export default function TeamSlider({ teamMembers, photoPendingText }: TeamSlider
               <h3 className="text-xl font-heading font-bold text-ink-heading mb-1 group-hover:text-primary transition-colors duration-200">
                 {member.name}
               </h3>
-              <p className="text-xs font-bold text-accent uppercase tracking-widest mb-4">
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-widest mb-4">
                 {member.role}
               </p>
               <p className="text-ink-body text-sm leading-relaxed">

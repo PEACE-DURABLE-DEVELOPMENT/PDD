@@ -68,7 +68,7 @@ export default async function AboutPage() {
 
   const values = [
     { title: t.about.val1Title, desc: t.about.val1Desc, icon: <Handshake className="w-7 h-7" />, color: "text-primary bg-primary/10" },
-    { title: t.about.val2Title, desc: t.about.val2Desc, icon: <Users className="w-7 h-7" />, color: "text-accent bg-accent/10" },
+    { title: t.about.val2Title, desc: t.about.val2Desc, icon: <Users className="w-7 h-7" />, color: "text-blue-600 bg-blue-600/10" },
     { title: t.about.val3Title, desc: t.about.val3Desc, icon: <TreePine className="w-7 h-7" />, color: "text-secondary bg-secondary/10" },
     { title: t.about.val4Title, desc: t.about.val4Desc, icon: <Heart className="w-7 h-7" />, color: "text-primary bg-primary/10" },
   ];
@@ -104,24 +104,24 @@ export default async function AboutPage() {
             {/* Left Column: Content */}
             <div className="lg:col-span-7 flex flex-col gap-6">
               <div>
-                <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-accent/15 text-accent font-semibold text-xs uppercase tracking-widest mb-4">
+                <span className="inline-flex items-center gap-2 py-1.5 px-4 rounded-full bg-blue-600/15 text-blue-600 font-semibold text-xs uppercase tracking-widest mb-4">
                   {t.about.aboutUsBadge}
                 </span>
                 <h1 className="text-4xl md:text-5xl font-heading font-extrabold text-ink-heading mb-4 leading-tight">
                   {t.about.title}
                 </h1>
-                <p className="text-lg md:text-xl text-accent font-medium italic">
+                <p className="text-lg md:text-xl text-blue-600 font-medium italic">
                   &ldquo;{t.about.tagline}&rdquo;
                 </p>
               </div>
               
-              <div className="h-px bg-accent/30 w-24"></div>
+              <div className="h-px bg-blue-600/30 w-24"></div>
               
               <p className="text-ink-body text-base md:text-lg leading-relaxed">
                 {t.about.para1}
               </p>
               
-              <div className="border-l-4 border-accent pl-4 py-1">
+              <div className="border-l-4 border-blue-600 pl-4 py-1">
                 <p className="text-sm font-semibold text-ink-heading uppercase tracking-wider mb-1">
                   {lang === "fr" ? "Notre conviction" : "Our conviction"}
                 </p>
@@ -133,7 +133,7 @@ export default async function AboutPage() {
               <div className="mt-4">
                 <Link
                   href="/founder-message"
-                  className="inline-flex items-center gap-3 bg-surface-alt border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-full font-bold text-sm transition-all shadow-sm hover:shadow-md group"
+                  className="inline-flex items-center gap-3 bg-surface-alt border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-6 py-3 rounded-full font-bold text-sm transition-all shadow-sm hover:shadow-md group"
                 >
                   {t.about.readFounderMessage}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -153,7 +153,7 @@ export default async function AboutPage() {
               </div>
               {/* Floating badge */}
               <div className="absolute -bottom-5 -right-4 bg-surface rounded-2xl shadow-xl border border-border px-5 py-3 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/15 flex items-center justify-center text-accent flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-blue-600/15 flex items-center justify-center text-blue-600 flex-shrink-0">
                   <Heart className="w-5 h-5" />
                 </div>
                 <div>
@@ -201,7 +201,7 @@ export default async function AboutPage() {
       <section className="py-20 md:py-28 bg-surface">
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-accent/10 text-accent font-semibold text-xs uppercase tracking-widest mb-4">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-blue-600/10 text-blue-600 font-semibold text-xs uppercase tracking-widest mb-4">
               {lang === "fr" ? "Ce qui nous guide" : "What guides us"}
             </span>
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-ink-heading mb-4">{t.about.valuesTitle}</h2>

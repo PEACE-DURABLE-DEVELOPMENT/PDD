@@ -1,4 +1,5 @@
 import { getBlogPosts } from "@/lib/blogAirtable";
+import { getAnnouncements } from "@/lib/announcementAirtable";
 import type { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
@@ -7,6 +8,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const staticRoutes = [
     "",
     "/about",
+    "/news",
     "/blog",
     "/contact",
     "/donate",
@@ -35,5 +37,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error generating dynamic blog sitemap:", error);
   }
 
-  return [...staticMaps, ...blogMaps];
+  let announcementMaps: MetadataRoute.Sitemap = [];
+  try {
+    const announcements = await getAnnouncements();
+    announcementMaps = announcements.map((a) => ({
+      url: `${baseUrl}/news/announcement/${a.slug}`,
+      lastModified: new Date(a.date),
+      changeFrequency: "weekly",
+      priority: 0.7,
+    }));
+  } catch (error) {
+    console.error("Error generating dynamic announcement sitemap:", error);
+  }
+
+  return [...staticMaps, ...blogMaps, ...announcementMaps];
 }

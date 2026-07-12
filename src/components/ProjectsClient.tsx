@@ -20,6 +20,7 @@ import {
   BookOpenCheck,
   Landmark,
   TreePine,
+  BookOpen,
 } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/LanguageContext";
@@ -97,6 +98,14 @@ export default function ProjectsClient() {
       fullDescription: t.projects.items.water.full,
       icon: Droplets,
       imageUrl: "/fill.webp",
+    },
+    {
+      id: "peace-library",
+      title: t.projects.items.library.title,
+      shortDescription: t.projects.items.library.short,
+      fullDescription: t.projects.items.library.full,
+      icon: BookOpen,
+      imageUrl: "/liba.jpeg",
     },
   ];
 
@@ -417,7 +426,7 @@ export default function ProjectsClient() {
       {/* Premium Hero Section */}
       <section className="relative py-16 lg:py-24 bg-black overflow-hidden border-b-4 border-blue-700">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,_var(--tw-gradient-stops))] from-blue-950/20 via-black to-black opacity-90"></div>
-        <div className="absolute top-0 left-0 w-full h-full opacity-10" style={{ backgroundImage: 'radial-gradient(#eab308 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
+        <div className="absolute top-0 left-0 w-full h-full opacity-10" style={{ backgroundImage: 'radial-gradient(#2563eb 1px, transparent 1px)', backgroundSize: '40px 40px' }}></div>
         <div className="container mx-auto px-4 relative z-10">
           <div className="w-full text-left">
             <h1
@@ -426,11 +435,11 @@ export default function ProjectsClient() {
             >
               {language === "fr" ? (
                 <>
-                  Transformer des <span style={{ color: "#eab308" }}>Vies</span> par des <span style={{ color: "#eab308" }}>Projets</span>
+                  Transformer des <span style={{ color: "#2563eb" }}>Vies</span> par des <span style={{ color: "#2563eb" }}>Projets</span>
                 </>
               ) : (
                 <>
-                  Transforming <span style={{ color: "#eab308" }}>Lives</span> Through Impactful <span style={{ color: "#eab308" }}>Projects</span>
+                  Transforming <span style={{ color: "#2563eb" }}>Lives</span> Through Impactful <span style={{ color: "#2563eb" }}>Projects</span>
                 </>
               )}
             </h1>
@@ -485,20 +494,20 @@ export default function ProjectsClient() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-[#4a90e2] border-t-4 border-blue-700">
+      <section className="py-24 bg-blue-950 border-t-4 border-blue-700">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-extrabold mb-8 text-white">
+          <h2 className="text-4xl md:text-5xl font-heading font-extrabold mb-8 text-blue-400">
             {language === "fr" ? (
               <>
-                Associez-vous à nous pour le <span className="text-blue-600">changement</span>
+                Associez-vous à nous pour le <span className="text-white">changement</span>
               </>
             ) : (
               <>
-                Partner With Us for <span className="text-blue-600">Change</span>
+                Partner With Us for <span className="text-white">Change</span>
               </>
             )}
           </h2>
-          <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto font-light">
+          <p className="text-xl text-white mb-12 max-w-2xl mx-auto font-light">
             {language === "fr"
               ? "Votre soutien peut nous aider à étendre ces projets et programmes et à toucher plus de communautés dans le besoin. Ensemble, nous pouvons construire un avenir meilleur."
               : "Your support can help us expand these projects and programs and reach more communities in need. Together, we can build a brighter future."
@@ -506,7 +515,7 @@ export default function ProjectsClient() {
           </p>
           <Link
             href="/donate"
-            className="inline-flex items-center justify-center px-10 py-5 bg-blue-600 text-slate-900 rounded-full font-extrabold hover:bg-blue-700 transition-all shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:translate-x-1 hover:translate-y-1 text-lg uppercase tracking-wider"
+            className="inline-flex items-center justify-center px-10 py-5 bg-yellow-400 text-slate-950 rounded-full font-extrabold hover:bg-yellow-500 transition-all shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] hover:translate-x-1 hover:translate-y-1 text-lg uppercase tracking-wider"
           >
             {language === "fr" ? "Impliquez-vous dès aujourd'hui" : "Get Involved Today"}
           </Link>

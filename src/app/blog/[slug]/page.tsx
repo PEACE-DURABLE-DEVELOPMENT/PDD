@@ -5,7 +5,6 @@ import { ArrowLeft, Calendar, Clock } from "lucide-react";
 import ShareButton from "@/components/ShareButton";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
-import { translateCategory } from "@/components/BlogFeed";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -66,14 +65,14 @@ export default async function BlogPostPage({ params }: Props) {
         
         <div className="container mx-auto max-w-4xl relative z-10">
           <Link
-            href="/blog"
+            href="/news"
             className="group inline-flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest mb-8"
           >
             <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1 text-blue-700" /> {t.blog.backLink}
           </Link>
           
           <div className="mb-4">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-800 text-xxs font-extrabold uppercase tracking-widest">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-blue-600 border border-blue-600 text-white text-xxs font-extrabold uppercase tracking-widest shadow-sm">
               {translateCategory(category, lang)}
             </span>
           </div>
@@ -166,6 +165,17 @@ export default async function BlogPostPage({ params }: Props) {
     </div>
   );
 }
+
+const translateCategory = (cat: string, lang: "en" | "fr") => {
+  if (lang === "en") return cat;
+  switch (cat) {
+    case "Water & Sanitation": return "Eau & Assainissement";
+    case "Sustainable Agriculture": return "Agriculture Durable";
+    case "Peacebuilding & Healing": return "Consolidation de la Paix";
+    case "Community Update": return "Actualités Communautaires";
+    default: return cat;
+  }
+};
 
 // Helper to resolve categories dynamically inside detail page
 const getPostCategory = (post: { title: string; content: string; excerpt: string; category?: string }) => {

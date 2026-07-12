@@ -19,7 +19,7 @@ export default function Navbar() {
     { name: t.common.about, href: "/about" },
     { name: t.common.projects, href: "/projects" },
     { name: t.common.impact, href: "/impact" },
-    { name: t.common.blog, href: "/blog" },
+    { name: t.common.news, href: "/news" },
     { name: t.common.partners, href: "/partners" },
     { name: t.common.contact, href: "/contact" },
   ];

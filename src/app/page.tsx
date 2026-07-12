@@ -44,6 +44,12 @@ export default async function Home() {
       image: "/fill.webp",
       summary: t.projects.items.water.short,
     },
+    {
+      id: "library",
+      title: t.projects.items.library.title,
+      image: "/liba.jpeg",
+      summary: t.projects.items.library.short,
+    },
   ];
 
   return (
@@ -92,7 +98,7 @@ export default async function Home() {
               )}
               <Link
                 href="/founder-message"
-                className="inline-flex items-center gap-3 bg-blue-600 text-slate-950 hover:bg-blue-700 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
+                className="inline-flex items-center gap-3 bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
               >
                 {t.common.learnMore}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -149,7 +155,7 @@ export default async function Home() {
           <div className="text-center mt-20">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-3 bg-blue-600 text-slate-900 font-extrabold px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-sm sm:text-lg uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
+              className="inline-flex items-center gap-3 bg-blue-600 text-white font-extrabold px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-sm sm:text-lg uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
             >
               {t.home.viewAllProjects}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -185,7 +191,7 @@ export default async function Home() {
                 {/* The Quote Block */}
                 <blockquote className="space-y-6">
                   <p className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-[1.15] tracking-tight">
-                    &ldquo;{t.home.beneficiaryQuote1Pre} <span className="line-through text-slate-400 decoration-red-500/80 decoration-[3px] underline-offset-4">{t.home.beneficiaryQuote1Strike}</span>. {t.home.beneficiaryQuote1Post} <span className="bg-blue-600 text-slate-950 px-3 py-1 rounded-xl inline-block transform -rotate-1 font-black shadow-md mx-1 tracking-wide">{t.home.beneficiaryQuote1Accent}</span>!&rdquo;
+                    &ldquo;{t.home.beneficiaryQuote1Pre} <span className="line-through text-slate-400 decoration-red-500/80 decoration-[3px] underline-offset-4">{t.home.beneficiaryQuote1Strike}</span>. {t.home.beneficiaryQuote1Post} <span className="bg-blue-600 text-white px-3 py-1 rounded-xl inline-block transform -rotate-1 font-black shadow-md mx-1 tracking-wide">{t.home.beneficiaryQuote1Accent}</span>!&rdquo;
                   </p>
                   
                   <p className="text-xl md:text-2xl font-light text-slate-700 leading-relaxed italic border-l-4 border-blue-600 pl-4">
@@ -212,7 +218,7 @@ export default async function Home() {
                 <div className="pt-4 hidden lg:block">
                   <Link
                     href="/programs"
-                    className="inline-flex items-center gap-3 bg-blue-600 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
+                    className="inline-flex items-center gap-3 bg-blue-600 text-white font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
                   >
                     {t.home.explorePrograms}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -256,7 +262,7 @@ export default async function Home() {
               <div className="mt-12 text-center lg:hidden relative z-30">
                 <Link
                   href="/programs"
-                  className="inline-flex items-center gap-3 bg-blue-600 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
+                  className="inline-flex items-center gap-3 bg-blue-600 text-white font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
                 >
                   {t.home.explorePrograms}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -271,7 +277,7 @@ export default async function Home() {
       {/* Call to Action Section */}
       <section className="py-12 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="bg-[#4a90e2] rounded-[3rem] overflow-hidden shadow-2xl relative">
+          <div className="bg-blue-950 rounded-[3rem] overflow-hidden shadow-2xl relative">
             <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
             
@@ -288,25 +294,25 @@ export default async function Home() {
               
               {/* Content Side */}
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <span className="inline-block py-1 px-3 rounded-full bg-blue-600/20 text-blue-400 font-bold text-sm mb-4 uppercase tracking-wider self-start">
+                <span className="inline-block py-1 px-3 rounded-full bg-blue-800 text-white font-bold text-sm mb-4 uppercase tracking-wider self-start">
                   {t.home.getInvolved}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-heading font-bold !text-white mb-4 leading-tight">
-                  {t.home.readyImpact} <br/><span className="!text-blue-600">{t.home.readyImpactAccent}</span>
+                <h2 className="text-3xl md:text-4xl font-heading font-bold !text-blue-400 mb-4 leading-tight">
+                  {t.home.readyImpact} <br/><span className="!text-white">{t.home.readyImpactAccent}</span>
                 </h2>
-                <p className="text-base text-blue-100 leading-relaxed mb-6">
+                <p className="text-base text-white leading-relaxed mb-6">
                   {t.home.ctaText}
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contact"
-                    className="bg-blue-600 text-slate-950 hover:bg-blue-700 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                    className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
                   >
                     {t.common.supportWork}
                   </Link>
                   <Link
                     href="/contact"
-                    className="border-2 border-blue-600 text-white hover:bg-blue-600/10 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
+                    className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
                   >
                     {t.common.contact}
                   </Link>

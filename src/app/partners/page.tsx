@@ -91,9 +91,9 @@ export default function PartnersPage() {
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
               {language === "fr" ? (
-                <>Nos Estimés <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-amber-600">Partenaires</span></>
+                <>Nos Estimés <span className="text-blue-600">Partenaires</span></>
               ) : (
-                <>Our Esteemed <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-amber-600">Partners</span></>
+                <>Our Esteemed <span className="text-blue-600">Partners</span></>
               )}
             </h1>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -166,7 +166,7 @@ export default function PartnersPage() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="mt-2 inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-700 text-slate-900 px-4 py-2 rounded-full font-bold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm"
+                              className="mt-2 inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-700 text-white px-4 py-2 rounded-full font-bold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm"
                             >
                               {t.common.learnMore}
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -216,7 +216,7 @@ export default function PartnersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-slate-900 px-8 py-4 rounded-full font-extrabold text-lg transition-all hover:scale-105 active:scale-95 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider"
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-extrabold text-lg transition-all hover:scale-105 active:scale-95 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider"
             >
               {t.common.partnerWithUs}
               <ArrowRight className="w-5 h-5" />

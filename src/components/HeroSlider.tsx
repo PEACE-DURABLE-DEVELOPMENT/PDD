@@ -31,7 +31,7 @@ export default function HeroSlider({
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % IMAGES.length);
-    }, 17500);
+    }, 10000);
     return () => clearInterval(timer);
   }, []);
 
@@ -53,7 +53,7 @@ export default function HeroSlider({
                 alt="PDD Rwanda Community Work"
                 fill
                 priority={index === 0}
-                className={`object-cover transition-transform duration-[17500ms] ease-linear scale-100`}
+                className={`object-cover transition-transform duration-[10000ms] ease-linear scale-100`}
                 sizes="100vw"
               />
             </div>
@@ -66,7 +66,7 @@ export default function HeroSlider({
       <div className="container mx-auto px-4 relative z-20">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-bold mb-8 leading-tight">
-            <span className="block text-white">{heroTitle1}</span>
+            <span className="block text-blue-400">{heroTitle1}</span>
             <span className="block text-white">{heroTitle2}</span>
           </h1>
           <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto sm:max-w-none">
