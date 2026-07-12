@@ -85,12 +85,12 @@ export default function DonatePage() {
       <section className="relative py-16 md:py-24 border-b border-border bg-white/40 backdrop-blur-md">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <span className="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full bg-yellow-400/20 text-yellow-800 font-extrabold text-xs uppercase tracking-widest mb-4 border border-yellow-400/30">
-              <Heart className="w-3.5 h-3.5 text-yellow-600 fill-yellow-600" />
+            <span className="inline-flex items-center gap-1.5 py-1 px-3.5 rounded-full bg-blue-600/20 text-blue-900 font-extrabold text-xs uppercase tracking-widest mb-4 border border-blue-600/30">
+              <Heart className="w-3.5 h-3.5 text-blue-700 fill-blue-700" />
               {t.donate.badge}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-ink-heading mb-6 tracking-tight">
-              {t.donate.heroTitle.split(' ')[0]} {t.donate.heroTitle.split(' ')[1]} {t.donate.heroTitle.split(' ')[2]} <span className="text-yellow-500">{t.donate.heroTitle.split(' ').slice(3).join(' ')}</span>
+              {t.donate.heroTitle.split(' ')[0]} {t.donate.heroTitle.split(' ')[1]} {t.donate.heroTitle.split(' ')[2]} <span className="text-blue-700">{t.donate.heroTitle.split(' ').slice(3).join(' ')}</span>
             </h1>
             <p className="text-lg md:text-xl text-ink-body leading-relaxed max-w-2xl mx-auto">
               {t.donate.heroSub}
@@ -109,14 +109,14 @@ export default function DonatePage() {
               
               {/* Form Header */}
               <div className="p-6 md:p-8 bg-slate-900 text-white relative">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-400/10 rounded-full blur-2xl pointer-events-none" />
+                <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 rounded-full blur-2xl pointer-events-none" />
                 <div className="flex items-center justify-between mb-4">
-                  <h2 className="text-2xl font-heading font-bold !text-yellow-400">{t.donate.widgetHeader}</h2>
+                  <h2 className="text-2xl font-heading font-bold !text-blue-600">{t.donate.widgetHeader}</h2>
                   <div className="flex bg-slate-800 p-1 rounded-full border border-slate-700 text-xs font-bold">
                     <button
                       onClick={() => setFrequency("once")}
                       className={`px-4 py-1.5 rounded-full transition-all cursor-pointer ${
-                        frequency === "once" ? "bg-yellow-400 text-slate-950" : "text-slate-400 hover:text-white"
+                        frequency === "once" ? "bg-blue-600 text-slate-950" : "text-slate-400 hover:text-white"
                       }`}
                     >
                       {t.donate.oneTime}
@@ -124,7 +124,7 @@ export default function DonatePage() {
                     <button
                       onClick={() => setFrequency("monthly")}
                       className={`px-4 py-1.5 rounded-full transition-all cursor-pointer ${
-                        frequency === "monthly" ? "bg-yellow-400 text-slate-950" : "text-slate-400 hover:text-white"
+                        frequency === "monthly" ? "bg-blue-600 text-slate-950" : "text-slate-400 hover:text-white"
                       }`}
                     >
                       {t.donate.monthly}
@@ -152,7 +152,7 @@ export default function DonatePage() {
                         }}
                         className={`py-4 px-2 rounded-2xl border font-heading font-extrabold text-lg flex flex-col items-center justify-center transition-all cursor-pointer ${
                           selectedAmount === tier.amount
-                            ? "bg-yellow-400 border-yellow-500 text-slate-950 shadow-md scale-[1.03]"
+                            ? "bg-blue-600 border-blue-700 text-slate-950 shadow-md scale-[1.03]"
                             : "bg-surface-alt border-border text-slate-700 hover:border-slate-300 hover:bg-slate-100"
                         }`}
                       >
@@ -179,7 +179,7 @@ export default function DonatePage() {
                       }}
                       className={`w-full pl-8 pr-12 py-4 bg-surface-alt border rounded-2xl font-semibold outline-none transition-all ${
                         selectedAmount === "custom"
-                          ? "border-yellow-400 ring-2 ring-yellow-400/20 bg-white text-slate-900"
+                          ? "border-blue-600 ring-2 ring-blue-600/20 bg-white text-slate-900"
                           : "border-border text-slate-700 hover:border-slate-300 focus:border-slate-400 focus:bg-white"
                       }`}
                     />
@@ -190,12 +190,12 @@ export default function DonatePage() {
                 </div>
 
                 {/* Impact Statement Box */}
-                <div className="bg-yellow-50/50 border border-yellow-100 rounded-2xl p-5 flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-yellow-400/20 flex items-center justify-center shrink-0 text-yellow-700">
-                    <Heart className="w-5 h-5 fill-yellow-500 text-yellow-600" />
+                <div className="bg-blue-50/50 border border-blue-100 rounded-2xl p-5 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-full bg-blue-600/20 flex items-center justify-center shrink-0 text-blue-800">
+                    <Heart className="w-5 h-5 fill-blue-700 text-blue-700" />
                   </div>
                   <div>
-                    <h3 className="font-heading font-extrabold text-sm text-yellow-900 uppercase tracking-wider mb-1">
+                    <h3 className="font-heading font-extrabold text-sm text-blue-950 uppercase tracking-wider mb-1">
                       {activeTier ? activeTier.title : t.donate.customDonation}
                     </h3>
                     <p className="text-slate-700 text-sm leading-relaxed">
@@ -227,7 +227,7 @@ export default function DonatePage() {
                             Ecobank Rwanda
                           </span>
                         </div>
-                        <span className="text-[10px] font-bold text-yellow-600 bg-yellow-400/10 border border-yellow-400/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
+                        <span className="text-[10px] font-bold text-blue-700 bg-blue-600/10 border border-blue-600/20 px-2 py-0.5 rounded-full uppercase tracking-wider">
                           {language === "fr" ? "Compte de Virement" : "Transfer Account"}
                         </span>
                       </div>
@@ -247,7 +247,7 @@ export default function DonatePage() {
                             {t.donate.bankAccountNumber}
                             <button
                               onClick={() => handleCopy("6852002782", "ecobank-acc")}
-                              className="text-yellow-600 hover:text-yellow-700 text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
+                              className="text-blue-700 hover:text-blue-800 text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
                             >
                               {copiedId === "ecobank-acc" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
                             </button>
@@ -262,7 +262,7 @@ export default function DonatePage() {
                             {t.donate.bankSwift || "Swift / BIC Code"}
                             <button
                               onClick={() => handleCopy("ECOWRWKA", "ecobank-swift")}
-                              className="text-yellow-600 hover:text-yellow-700 text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
+                              className="text-blue-700 hover:text-blue-800 text-[10px] hover:underline flex items-center gap-0.5 font-sans lowercase cursor-pointer"
                             >
                               {copiedId === "ecobank-swift" ? t.donate.copied.toLowerCase() : t.donate.copy.toLowerCase()}
                             </button>
@@ -298,18 +298,18 @@ export default function DonatePage() {
               <div className="bg-slate-900 text-white rounded-3xl p-6 md:p-6 border border-slate-850 shadow-xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
                 
-                <h3 className="text-lg font-heading font-extrabold !text-yellow-400 mb-6 flex items-center gap-2">
-                  <ShieldCheck className="w-5 h-5 text-yellow-400" />
+                <h3 className="text-lg font-heading font-extrabold !text-blue-600 mb-6 flex items-center gap-2">
+                  <ShieldCheck className="w-5 h-5 text-blue-600" />
                   {t.donate.trustTitle}
                 </h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 text-yellow-400">
+                    <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 text-blue-600">
                       <span className="font-heading font-extrabold text-sm">100%</span>
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm !text-yellow-400">{t.donate.trust1Title}</h4>
+                      <h4 className="font-heading font-bold text-sm !text-blue-600">{t.donate.trust1Title}</h4>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                         {t.donate.trust1Desc}
                       </p>
@@ -317,11 +317,11 @@ export default function DonatePage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 text-yellow-400">
+                    <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 text-blue-600">
                       <Check className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm !text-yellow-400">{t.donate.trust2Title}</h4>
+                      <h4 className="font-heading font-bold text-sm !text-blue-600">{t.donate.trust2Title}</h4>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                         {t.donate.trust2Desc}
                       </p>
@@ -329,11 +329,11 @@ export default function DonatePage() {
                   </div>
 
                   <div className="flex items-start gap-4">
-                    <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 text-yellow-400">
-                      <Heart className="w-4.5 h-4.5 fill-yellow-400 text-yellow-400" />
+                    <div className="w-9 h-9 rounded-xl bg-slate-800 flex items-center justify-center shrink-0 border border-slate-700 text-blue-600">
+                      <Heart className="w-4.5 h-4.5 fill-blue-600 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-heading font-bold text-sm !text-yellow-400">{t.donate.trust3Title}</h4>
+                      <h4 className="font-heading font-bold text-sm !text-blue-600">{t.donate.trust3Title}</h4>
                       <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                         {t.donate.trust3Desc}
                       </p>

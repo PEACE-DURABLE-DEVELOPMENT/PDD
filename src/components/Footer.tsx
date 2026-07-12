@@ -24,7 +24,7 @@ export default async function Footer() {
                   className="w-full h-full rounded-full object-cover"
                 />
               </div>
-              <span className="font-heading font-bold text-xl text-yellow-400">
+              <span className="font-heading font-bold text-xl text-blue-600">
                 PDD
               </span>
             </Link>
@@ -35,37 +35,32 @@ export default async function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="font-heading font-semibold !text-yellow-400 mb-6">
+            <h3 className="font-heading font-semibold !text-blue-600 mb-6">
               {t.footer.quickLinks}
             </h3>
             <ul className="space-y-4 text-sm">
               <li>
-                <Link href="/about" className="text-slate-400 hover:text-yellow-400 transition-colors">
+                <Link href="/about" className="text-slate-400 hover:text-blue-600 transition-colors">
                   {t.common.about}
                 </Link>
               </li>
               <li>
-                <Link href="/projects" className="text-slate-400 hover:text-yellow-400 transition-colors">
+                <Link href="/projects" className="text-slate-400 hover:text-blue-600 transition-colors">
                   {t.common.projects}
                 </Link>
               </li>
               <li>
-                <Link href="/programs" className="text-slate-400 hover:text-yellow-400 transition-colors">
-                  {t.common.programs}
-                </Link>
-              </li>
-              <li>
-                <Link href="/impact" className="text-slate-400 hover:text-yellow-400 transition-colors">
+                <Link href="/impact" className="text-slate-400 hover:text-blue-600 transition-colors">
                   {t.common.impact}
                 </Link>
               </li>
               <li>
-                <Link href="/donate" className="text-slate-400 hover:text-yellow-400 transition-colors">
+                <Link href="/donate" className="text-slate-400 hover:text-blue-600 transition-colors">
                   {t.common.donate}
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-slate-400 hover:text-yellow-400 transition-colors">
+                <Link href="/contact" className="text-slate-400 hover:text-blue-600 transition-colors">
                   {t.common.contact}
                 </Link>
               </li>
@@ -74,27 +69,27 @@ export default async function Footer() {
 
           {/* Contact */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="font-heading font-semibold !text-yellow-400 mb-6">
+            <h3 className="font-heading font-semibold !text-blue-600 mb-6">
               {t.footer.contactUs}
             </h3>
             <div className="space-y-4 text-sm">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-yellow-400 shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                 <div>
-                  <p className="font-medium text-yellow-400">{t.footer.headquarters}</p>
+                  <p className="font-medium text-blue-600">{t.footer.headquarters}</p>
                   <p className="text-slate-400">{t.footer.hqAddress}</p>
-                  <p className="font-medium text-yellow-400 mt-3">{t.footer.fieldOffice}</p>
+                  <p className="font-medium text-blue-600 mt-3">{t.footer.fieldOffice}</p>
                   <p className="text-slate-400">{t.footer.fieldAddress}</p>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-yellow-400 shrink-0" />
+                <Phone className="w-5 h-5 text-blue-600 shrink-0" />
                 <p className="text-slate-400">
                   (+250) 788 476 168 / 782 894 008 / 725 218 780
                 </p>
               </div>
               <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-yellow-400 shrink-0" />
+                <Mail className="w-5 h-5 text-blue-600 shrink-0" />
                 <p className="text-slate-400">info@pddrwanda.org</p>
               </div>
             </div>

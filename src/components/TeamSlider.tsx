@@ -33,7 +33,7 @@ export default function TeamSlider({ teamMembers, photoPendingText }: TeamSlider
       {/* Left Navigation Arrow */}
       <button
         onClick={() => scroll("left")}
-        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-950/85 backdrop-blur-xs border border-slate-800 shadow-lg flex items-center justify-center text-yellow-400 focus:outline-none cursor-pointer md:hidden"
+        className="absolute left-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-950/85 backdrop-blur-xs border border-slate-800 shadow-lg flex items-center justify-center text-blue-600 focus:outline-none cursor-pointer md:hidden"
         aria-label="Previous team member"
       >
         <ChevronLeft className="w-6 h-6" />
@@ -87,7 +87,7 @@ export default function TeamSlider({ teamMembers, photoPendingText }: TeamSlider
       {/* Right Navigation Arrow */}
       <button
         onClick={() => scroll("right")}
-        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-950/85 backdrop-blur-xs border border-slate-800 shadow-lg flex items-center justify-center text-yellow-400 focus:outline-none cursor-pointer md:hidden"
+        className="absolute right-2 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-slate-950/85 backdrop-blur-xs border border-slate-800 shadow-lg flex items-center justify-center text-blue-600 focus:outline-none cursor-pointer md:hidden"
         aria-label="Next team member"
       >
         <ChevronRight className="w-6 h-6" />

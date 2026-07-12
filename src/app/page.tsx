@@ -63,7 +63,7 @@ export default async function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Image Side */}
             <div className="relative max-w-sm lg:max-w-md mx-auto w-full">
-              <div className="absolute -inset-4 bg-yellow-400/20 rounded-[3rem] transform -rotate-3 z-0"></div>
+              <div className="absolute -inset-4 bg-blue-600/20 rounded-[3rem] transform -rotate-3 z-0"></div>
               <div className="relative z-10 w-full aspect-[4/5] md:aspect-square lg:aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white">
                 <SmartImage
                   cloudinaryUrl="/boy.webp"
@@ -76,11 +76,11 @@ export default async function Home() {
             
             {/* Content Side */}
             <div className="flex flex-col items-start text-left lg:pr-12">
-              <span className="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-600 font-bold text-sm mb-6 uppercase tracking-wider">
+              <span className="inline-block py-1 px-3 rounded-full bg-blue-600/20 text-blue-700 font-bold text-sm mb-6 uppercase tracking-wider">
                 {t.home.whoWeAreBadge}
               </span>
               <h2 className="text-4xl md:text-5xl font-heading font-bold text-slate-900 mb-6 leading-tight">
-                {t.home.whoWeAreTitle}<span className="text-yellow-500">{t.home.whoWeAreTitleAccent}</span>
+                {t.home.whoWeAreTitle}<span className="text-blue-700">{t.home.whoWeAreTitleAccent}</span>
               </h2>
               <p className={`text-lg text-slate-600 leading-relaxed text-justify ${t.home.whoWeArePara2 ? 'mb-6' : 'mb-10'}`}>
                 {t.home.whoWeArePara1}
@@ -92,7 +92,7 @@ export default async function Home() {
               )}
               <Link
                 href="/founder-message"
-                className="inline-flex items-center gap-3 bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
+                className="inline-flex items-center gap-3 bg-blue-600 text-slate-950 hover:bg-blue-700 px-8 py-4 rounded-full font-bold text-lg transition-all shadow-md hover:shadow-lg group"
               >
                 {t.common.learnMore}
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -133,13 +133,13 @@ export default async function Home() {
         <div className="container mx-auto px-4 relative z-10">
           {/* Section Header */}
           <div className="text-center mb-20">
-            <span className="inline-block py-1 px-4 rounded-full bg-yellow-400/20 text-yellow-700 font-bold text-sm mb-5 uppercase tracking-widest border border-yellow-400/30">
+            <span className="inline-block py-1 px-4 rounded-full bg-blue-600/20 text-blue-800 font-bold text-sm mb-5 uppercase tracking-widest border border-blue-600/30">
               {t.home.whatWeDoBadge}
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold text-slate-900 leading-tight">
               {t.home.whatWeDoTitle}
             </h2>
-            <div className="h-1 w-24 bg-yellow-400 mx-auto mt-5 rounded-full" />
+            <div className="h-1 w-24 bg-blue-600 mx-auto mt-5 rounded-full" />
           </div>
 
           {/* Card Grid / Swiper */}
@@ -149,7 +149,7 @@ export default async function Home() {
           <div className="text-center mt-20">
             <Link
               href="/projects"
-              className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-sm sm:text-lg uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
+              className="inline-flex items-center gap-3 bg-blue-600 text-slate-900 font-extrabold px-6 py-3.5 sm:px-10 sm:py-5 rounded-full text-sm sm:text-lg uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[8px_8px_0px_0px_rgba(234,179,8,0.25)] hover:shadow-[4px_4px_0px_0px_rgba(234,179,8,0.25)] hover:translate-y-1 group"
             >
               {t.home.viewAllProjects}
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -161,23 +161,23 @@ export default async function Home() {
       {/* PDD Burera Beneficiary Story Section */}
       <section className="py-28 bg-[#FFFDF9] overflow-hidden relative border-t border-b border-amber-100">
         {/* Background graphic elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
-        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-yellow-500/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
+        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2 pointer-events-none" />
+        <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-blue-700/5 rounded-full blur-3xl translate-x-1/3 translate-y-1/3 pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center">
             {/* Left side: quote */}
             <div className="lg:col-span-7 relative">
               {/* Huge stylized double quote mark floating in background */}
-              <span className="absolute -top-28 -left-8 text-[14rem] md:text-[16rem] font-serif text-yellow-400/25 leading-none select-none pointer-events-none z-0">
+              <span className="absolute -top-28 -left-8 text-[14rem] md:text-[16rem] font-serif text-blue-600/25 leading-none select-none pointer-events-none z-0">
                 “
               </span>
               
               <div className="relative z-10 space-y-8 pl-4 sm:pl-8">
                 {/* Tag/Badge */}
-                <div className="inline-flex items-center gap-2 px-3 py-1 bg-yellow-400/10 border border-yellow-400/30 rounded-full">
-                  <span className="w-2 h-2 rounded-full bg-yellow-500 animate-pulse" />
-                  <span className="text-xs font-black text-yellow-800 uppercase tracking-widest">
+                <div className="inline-flex items-center gap-2 px-3 py-1 bg-blue-600/10 border border-blue-600/30 rounded-full">
+                  <span className="w-2 h-2 rounded-full bg-blue-700 animate-pulse" />
+                  <span className="text-xs font-black text-blue-900 uppercase tracking-widest">
                     {t.home.beneficiaryBadge}
                   </span>
                 </div>
@@ -185,17 +185,17 @@ export default async function Home() {
                 {/* The Quote Block */}
                 <blockquote className="space-y-6">
                   <p className="text-3xl md:text-4xl lg:text-5xl font-heading font-black text-slate-900 leading-[1.15] tracking-tight">
-                    &ldquo;{t.home.beneficiaryQuote1Pre} <span className="line-through text-slate-400 decoration-red-500/80 decoration-[3px] underline-offset-4">{t.home.beneficiaryQuote1Strike}</span>. {t.home.beneficiaryQuote1Post} <span className="bg-yellow-400 text-slate-950 px-3 py-1 rounded-xl inline-block transform -rotate-1 font-black shadow-md mx-1 tracking-wide">{t.home.beneficiaryQuote1Accent}</span>!&rdquo;
+                    &ldquo;{t.home.beneficiaryQuote1Pre} <span className="line-through text-slate-400 decoration-red-500/80 decoration-[3px] underline-offset-4">{t.home.beneficiaryQuote1Strike}</span>. {t.home.beneficiaryQuote1Post} <span className="bg-blue-600 text-slate-950 px-3 py-1 rounded-xl inline-block transform -rotate-1 font-black shadow-md mx-1 tracking-wide">{t.home.beneficiaryQuote1Accent}</span>!&rdquo;
                   </p>
                   
-                  <p className="text-xl md:text-2xl font-light text-slate-700 leading-relaxed italic border-l-4 border-yellow-400 pl-4">
+                  <p className="text-xl md:text-2xl font-light text-slate-700 leading-relaxed italic border-l-4 border-blue-600 pl-4">
                     &ldquo;{t.home.beneficiaryQuote2}&rdquo;
                   </p>
                 </blockquote>
                 
                 {/* Sign-off / Citation */}
                 <div className="pt-4 flex items-center gap-4">
-                  <div className="w-12 h-0.5 bg-yellow-400" />
+                  <div className="w-12 h-0.5 bg-blue-600" />
                   <div>
                     <cite className="block not-italic">
                       <span className="block font-black text-slate-900 text-lg uppercase tracking-wide">
@@ -212,7 +212,7 @@ export default async function Home() {
                 <div className="pt-4 hidden lg:block">
                   <Link
                     href="/programs"
-                    className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
+                    className="inline-flex items-center gap-3 bg-blue-600 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
                   >
                     {t.home.explorePrograms}
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -224,7 +224,7 @@ export default async function Home() {
             {/* Right side: Framed image */}
             <div className="lg:col-span-5 relative">
               {/* Decorative background border block (yellow solid offset box) */}
-              <div className="absolute inset-0 bg-yellow-400 translate-x-4 translate-y-4 rounded-[2rem] shadow-lg pointer-events-none z-0" />
+              <div className="absolute inset-0 bg-blue-600 translate-x-4 translate-y-4 rounded-[2rem] shadow-lg pointer-events-none z-0" />
               
               {/* Main Image Card Wrapper */}
               <div className="relative bg-white p-4 rounded-[2rem] border border-slate-200 shadow-xl overflow-hidden z-10">
@@ -238,7 +238,7 @@ export default async function Home() {
                 {/* stamp / Geographical coordinates overlay */}
                 <div className="absolute bottom-8 left-8 right-8 bg-slate-950/90 backdrop-blur-md px-6 py-4 rounded-xl border border-white/10 text-white z-20 flex items-center justify-between shadow-2xl">
                   <div>
-                    <p className="text-[10px] font-bold tracking-widest text-yellow-400 uppercase">{t.home.stampLocation}</p>
+                    <p className="text-[10px] font-bold tracking-widest text-blue-600 uppercase">{t.home.stampLocation}</p>
                     <p className="text-sm font-extrabold tracking-wide mt-0.5">{t.home.stampLocationVal}</p>
                   </div>
                   <div className="text-right">
@@ -256,7 +256,7 @@ export default async function Home() {
               <div className="mt-12 text-center lg:hidden relative z-30">
                 <Link
                   href="/programs"
-                  className="inline-flex items-center gap-3 bg-yellow-400 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-yellow-500 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
+                  className="inline-flex items-center gap-3 bg-blue-600 text-slate-900 font-extrabold px-6 py-3.5 rounded-full text-sm uppercase tracking-wider hover:bg-blue-700 transition-all shadow-[6px_6px_0px_0px_rgba(234,179,8,0.2)] hover:shadow-[3px_3px_0px_0px_rgba(234,179,8,0.2)] hover:translate-y-0.5 group"
                 >
                   {t.home.explorePrograms}
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
@@ -272,7 +272,7 @@ export default async function Home() {
       <section className="py-12 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="bg-[#4a90e2] rounded-[3rem] overflow-hidden shadow-2xl relative">
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
             <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-white/20 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none"></div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
@@ -288,11 +288,11 @@ export default async function Home() {
               
               {/* Content Side */}
               <div className="p-8 lg:p-12 flex flex-col justify-center">
-                <span className="inline-block py-1 px-3 rounded-full bg-yellow-400/20 text-yellow-300 font-bold text-sm mb-4 uppercase tracking-wider self-start">
+                <span className="inline-block py-1 px-3 rounded-full bg-blue-600/20 text-blue-400 font-bold text-sm mb-4 uppercase tracking-wider self-start">
                   {t.home.getInvolved}
                 </span>
                 <h2 className="text-3xl md:text-4xl font-heading font-bold !text-white mb-4 leading-tight">
-                  {t.home.readyImpact} <br/><span className="!text-yellow-400">{t.home.readyImpactAccent}</span>
+                  {t.home.readyImpact} <br/><span className="!text-blue-600">{t.home.readyImpactAccent}</span>
                 </h2>
                 <p className="text-base text-blue-100 leading-relaxed mb-6">
                   {t.home.ctaText}
@@ -300,13 +300,13 @@ export default async function Home() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Link
                     href="/contact"
-                    className="bg-yellow-400 text-slate-950 hover:bg-yellow-500 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
+                    className="bg-blue-600 text-slate-950 hover:bg-blue-700 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all shadow-md hover:shadow-lg hover:-translate-y-1"
                   >
                     {t.common.supportWork}
                   </Link>
                   <Link
                     href="/contact"
-                    className="border-2 border-yellow-400 text-white hover:bg-yellow-400/10 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
+                    className="border-2 border-blue-600 text-white hover:bg-blue-600/10 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full font-bold text-sm sm:text-base text-center transition-all backdrop-blur-sm hover:-translate-y-1"
                   >
                     {t.common.contact}
                   </Link>

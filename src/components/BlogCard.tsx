@@ -54,7 +54,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
   return (
     <article className="group relative flex flex-col bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-350 h-full">
       {/* Decorative top accent bar */}
-      <div className="absolute top-0 left-0 right-0 h-[3px] bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-350 origin-left z-10" />
+      <div className="absolute top-0 left-0 right-0 h-[3px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-350 origin-left z-10" />
 
       {/* Image Area */}
       <Link href={`/blog/${post.slug}`} className="block relative aspect-[16/10] overflow-hidden bg-slate-50 shrink-0">
@@ -68,7 +68,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
             />
           </div>
         ) : (
-          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-yellow-50 to-slate-50 text-slate-400">
+          <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-50 to-slate-50 text-slate-400">
             <span className="font-medium text-sm">{language === "fr" ? "Aucune image disponible" : "No image available"}</span>
           </div>
         )}
@@ -97,7 +97,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
 
         {/* Title */}
         <Link href={`/blog/${post.slug}`} className="block mb-3">
-          <h3 className="text-xl font-heading font-extrabold text-slate-900 leading-tight group-hover:text-yellow-600 transition-colors line-clamp-2">
+          <h3 className="text-xl font-heading font-extrabold text-slate-900 leading-tight group-hover:text-blue-700 transition-colors line-clamp-2">
             {post.title}
           </h3>
         </Link>
@@ -111,7 +111,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
         <div className="flex items-center justify-between pt-5 border-t border-slate-50 mt-auto">
           {/* Author Badge */}
           <div className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 border border-yellow-100 font-heading font-bold text-xs uppercase shadow-sm">
+            <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 border border-blue-100 font-heading font-bold text-xs uppercase shadow-sm">
               {authorInitials.split(" ").map((n) => n[0]).join("").substring(0, 2).toUpperCase()}
             </div>
             <span className="text-xs font-bold text-slate-800 tracking-wide">{post.author}</span>
@@ -123,7 +123,7 @@ export default function BlogCard({ post }: { post: BlogPost }) {
             className="inline-flex items-center gap-1.5 text-slate-900 font-bold text-xs uppercase tracking-wider group/btn"
           >
             <span>{t.common.readStory}</span>
-            <ArrowRight className="w-3.5 h-3.5 text-yellow-500 transition-transform duration-300 group-hover/btn:translate-x-1" />
+            <ArrowRight className="w-3.5 h-3.5 text-blue-700 transition-transform duration-300 group-hover/btn:translate-x-1" />
           </Link>
         </div>
       </div>

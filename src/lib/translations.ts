@@ -38,8 +38,8 @@ const translationsRaw = {
       allRightsReserved: "All rights reserved.",
     },
     home: {
-      heroTitle1: "Building Peace,",
-      heroTitle2: "One Family at a Time.",
+      heroTitle1: "Yes to Peace,",
+      heroTitle2: "Yes to Durable Development.",
       heroSub1: "Empowering communities in Rwanda through conflict resolution,",
       heroSub2: "sustainable agriculture, and socio-economic development since 2001.",
       ourProjects: "Our Projects",
@@ -466,8 +466,8 @@ const translationsRaw = {
       allRightsReserved: "Tous droits réservés.",
     },
     home: {
-      heroTitle1: "Bâtir la paix,",
-      heroTitle2: "une famille à la fois.",
+      heroTitle1: "Oui à la Paix,",
+      heroTitle2: "Oui au Développement Durable.",
       heroSub1: "Autonomiser les communautés au Rwanda grâce à la résolution des conflits,",
       heroSub2: "l'agriculture durable et le développement socio-économique depuis 2001.",
       ourProjects: "Nos Projets",

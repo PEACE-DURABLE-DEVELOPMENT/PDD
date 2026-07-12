@@ -87,7 +87,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
                 className={cn(
                   "px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border cursor-pointer",
                   isActive
-                    ? "bg-yellow-400 border-yellow-400 text-slate-900 shadow-sm scale-105"
+                    ? "bg-blue-600 border-blue-600 text-slate-900 shadow-sm scale-105"
                     : "bg-slate-50 border-slate-100 text-slate-600 hover:border-slate-200 hover:text-slate-900"
                 )}
               >
@@ -105,7 +105,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
             placeholder={t.blog.searchPlaceholder}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full pl-11 pr-10 py-2.5 bg-slate-50 border border-slate-100 rounded-full text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-yellow-400 focus:bg-white transition-all duration-300"
+            className="w-full pl-11 pr-10 py-2.5 bg-slate-50 border border-slate-100 rounded-full text-sm font-medium text-slate-800 placeholder-slate-400 focus:outline-none focus:border-blue-600 focus:bg-white transition-all duration-300"
           />
           {searchQuery && (
             <button
@@ -121,7 +121,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
       {/* Featured Post Card */}
       {showFeatured && featuredPost && (
         <div className="group relative bg-white border border-slate-100 rounded-[2rem] p-6 md:p-8 shadow-sm hover:shadow-xl transition-all duration-350 overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-[4px] bg-yellow-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-350 origin-left" />
+          <div className="absolute top-0 left-0 right-0 h-[4px] bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-350 origin-left" />
           
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             {/* Image side */}
@@ -149,11 +149,11 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
 
             {/* Content side */}
             <div className="lg:col-span-5 flex flex-col justify-center h-full">
-              <span className="text-yellow-600 text-xxs font-extrabold uppercase tracking-widest bg-yellow-50 px-2.5 py-1 rounded-full self-start mb-4">
+              <span className="text-blue-700 text-xxs font-extrabold uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded-full self-start mb-4">
                 {translateCategory(getPostCategory(featuredPost), language)}
               </span>
 
-              <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-slate-900 leading-tight mb-4 group-hover:text-yellow-600 transition-colors">
+              <h2 className="text-2xl md:text-3xl font-heading font-extrabold text-slate-900 leading-tight mb-4 group-hover:text-blue-700 transition-colors">
                 <Link href={`/blog/${featuredPost.slug}`}>
                   {featuredPost.title}
                 </Link>
@@ -178,7 +178,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
               {/* Author and CTA */}
               <div className="flex items-center justify-between pt-6 border-t border-slate-50 mt-auto">
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-yellow-50 border border-yellow-100 flex items-center justify-center text-yellow-600 font-heading font-bold text-xs uppercase shadow-sm">
+                  <div className="w-8 h-8 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center text-blue-700 font-heading font-bold text-xs uppercase shadow-sm">
                     {featuredPost.author.split(" ").map((n) => n[0]).join("").substring(0, 2).toUpperCase()}
                   </div>
                   <span className="text-xs font-bold text-slate-800 tracking-wide">{featuredPost.author}</span>
@@ -186,7 +186,7 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
 
                 <Link
                   href={`/blog/${featuredPost.slug}`}
-                  className="inline-flex items-center gap-2 bg-yellow-400 text-slate-950 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-yellow-500 hover:shadow-md transition-all duration-300"
+                  className="inline-flex items-center gap-2 bg-blue-600 text-slate-950 px-5 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider hover:bg-blue-700 hover:shadow-md transition-all duration-300"
                 >
                   <span>{language === "fr" ? "Lire l'histoire complète" : "Read Full Story"}</span>
                   <ArrowRight className="w-3.5 h-3.5" />
@@ -221,8 +221,8 @@ export default function BlogFeed({ posts }: BlogFeedProps) {
       ) : (
         /* Empty State */
         <div className="text-center py-20 bg-white rounded-[2rem] border border-slate-100 shadow-sm max-w-xl mx-auto p-8">
-          <div className="w-16 h-16 bg-yellow-50 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-yellow-100">
-            <BookOpen className="w-8 h-8 text-yellow-600" />
+          <div className="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mx-auto mb-6 border border-blue-100">
+            <BookOpen className="w-8 h-8 text-blue-700" />
           </div>
           <h3 className="text-2xl font-heading font-bold text-slate-900 mb-2">
             {language === "fr" ? "Aucune histoire ne correspond à vos critères" : "No stories match your criteria"}

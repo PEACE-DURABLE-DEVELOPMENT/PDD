@@ -77,7 +77,7 @@ export default function RippleEffectPathway() {
               key={step.id}
               className={cn(
                 "border rounded-2xl overflow-hidden transition-all duration-300 bg-white",
-                isOpen ? "border-yellow-400 shadow-lg" : "border-slate-100 shadow-sm"
+                isOpen ? "border-blue-600 shadow-lg" : "border-slate-100 shadow-sm"
               )}
             >
               <button
@@ -98,7 +98,7 @@ export default function RippleEffectPathway() {
                 <ChevronRight
                   className={cn(
                     "w-5 h-5 text-slate-400 transition-transform duration-300",
-                    isOpen ? "rotate-90 text-yellow-500" : ""
+                    isOpen ? "rotate-90 text-blue-700" : ""
                   )}
                 />
               </button>
@@ -147,7 +147,7 @@ export default function RippleEffectPathway() {
                 className={cn(
                   "group relative w-full flex items-center gap-5 p-6 rounded-2xl border text-left transition-all duration-300 cursor-pointer",
                   isActive
-                    ? "border-yellow-400 bg-white shadow-xl translate-x-2"
+                    ? "border-blue-600 bg-white shadow-xl translate-x-2"
                     : "border-slate-100 bg-white hover:border-slate-200 hover:shadow-md"
                 )}
               >
@@ -156,7 +156,7 @@ export default function RippleEffectPathway() {
                   <div
                     className={cn(
                       "absolute left-[40px] top-[76px] w-[2px] h-[36px] z-0 pointer-events-none transition-colors duration-300",
-                      activeStep > step.id ? "bg-yellow-400" : "bg-slate-100"
+                      activeStep > step.id ? "bg-blue-600" : "bg-slate-100"
                     )}
                   />
                 )}
@@ -164,7 +164,7 @@ export default function RippleEffectPathway() {
                 <div
                   className={cn(
                     "w-12 h-12 rounded-xl flex items-center justify-center font-bold text-lg z-10 transition-colors duration-300",
-                    isActive ? "bg-yellow-400 text-slate-900" : "bg-slate-50 text-slate-500 group-hover:bg-slate-100"
+                    isActive ? "bg-blue-600 text-slate-900" : "bg-slate-50 text-slate-500 group-hover:bg-slate-100"
                   )}
                 >
                   <Icon className="w-6 h-6" />
@@ -173,7 +173,7 @@ export default function RippleEffectPathway() {
                 <div className="z-10">
                   <span className={cn(
                     "text-xs font-bold block uppercase tracking-widest mb-1 transition-colors duration-300",
-                    isActive ? "text-yellow-600" : "text-slate-400"
+                    isActive ? "text-blue-700" : "text-slate-400"
                   )}>
                     {language === "fr" ? `Étape 0${step.id}` : `Stage 0${step.id}`}
                   </span>
@@ -215,7 +215,7 @@ export default function RippleEffectPathway() {
               <div className="p-8 flex-grow flex flex-col justify-between relative z-20 -mt-10 bg-white rounded-t-3xl shadow-[0_-12px_24px_rgba(0,0,0,0.03)]">
                 <div>
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-yellow-600 text-xs font-extrabold uppercase tracking-widest bg-yellow-50 px-2.5 py-1 rounded-full">
+                    <span className="text-blue-700 text-xs font-extrabold uppercase tracking-widest bg-blue-50 px-2.5 py-1 rounded-full">
                       {language === "fr" ? `Étape 0${currentStep.id}` : `Stage 0${currentStep.id}`}
                     </span>
                     <span className="text-slate-400 text-sm font-semibold">
@@ -232,9 +232,9 @@ export default function RippleEffectPathway() {
 
                 <div className="pt-6 border-t border-slate-100 flex items-center justify-between text-sm">
                   <span className="text-slate-400 font-medium">{t.projects.impactCycle}</span>
-                  <div className="flex items-center gap-1.5 text-yellow-600 font-bold">
+                  <div className="flex items-center gap-1.5 text-blue-700 font-bold">
                     <span>{t.projects.activeStage}</span>
-                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-yellow-400 animate-pulse" />
+                    <span className="inline-block w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
                   </div>
                 </div>
               </div>

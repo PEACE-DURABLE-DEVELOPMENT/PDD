@@ -18,7 +18,6 @@ export default function Navbar() {
     { name: t.common.home, href: "/" },
     { name: t.common.about, href: "/about" },
     { name: t.common.projects, href: "/projects" },
-    { name: t.common.programs, href: "/programs" },
     { name: t.common.impact, href: "/impact" },
     { name: t.common.blog, href: "/blog" },
     { name: t.common.partners, href: "/partners" },
@@ -52,8 +51,8 @@ export default function Navbar() {
                 href={item.href}
                 className={`transition-colors ${
                   isActive
-                    ? "text-yellow-500 font-bold"
-                    : "text-ink-body hover:text-yellow-500"
+                    ? "text-blue-700 font-bold"
+                    : "text-ink-body hover:text-blue-700"
                 }`}
               >
                 {item.name}
@@ -77,7 +76,7 @@ export default function Navbar() {
           {/* Support Work Button - Hidden on mobile screen headers to prevent crowding */}
           <Link
             href="/donate"
-            className="hidden sm:inline-block bg-yellow-400 text-black hover:bg-yellow-500 px-6 py-2.5 rounded-full font-bold transition-colors shadow-sm"
+            className="hidden sm:inline-block bg-blue-600 text-black hover:bg-blue-700 px-6 py-2.5 rounded-full font-bold transition-colors shadow-sm"
           >
             {t.common.supportWork}
           </Link>
@@ -131,8 +130,8 @@ export default function Navbar() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className={`transition-colors py-1 ${
                     isActive
-                      ? "text-yellow-500 font-bold"
-                      : "text-ink-body hover:text-yellow-500"
+                      ? "text-blue-700 font-bold"
+                      : "text-ink-body hover:text-blue-700"
                   }`}
                 >
                   {item.name}
@@ -161,7 +160,7 @@ export default function Navbar() {
             <Link
               href="/donate"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="w-full bg-yellow-400 text-black hover:bg-yellow-500 py-3 rounded-full font-bold text-center transition-colors shadow-sm block text-sm uppercase tracking-wider"
+              className="w-full bg-blue-600 text-black hover:bg-blue-700 py-3 rounded-full font-bold text-center transition-colors shadow-sm block text-sm uppercase tracking-wider"
             >
               {t.common.supportWork}
             </Link>

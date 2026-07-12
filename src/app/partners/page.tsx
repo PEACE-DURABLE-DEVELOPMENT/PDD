@@ -76,7 +76,7 @@ export default function PartnersPage() {
       {/* Hero Section */}
       <section className="relative py-24 overflow-hidden bg-white">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-yellow-100/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-100/50 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-100/40 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/3" />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center max-w-4xl">
@@ -85,15 +85,15 @@ export default function PartnersPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-yellow-50 text-yellow-700 font-medium text-sm mb-6 border border-yellow-200 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 text-blue-800 font-medium text-sm mb-6 border border-blue-200 shadow-sm">
               <Sparkles className="w-4 h-4" />
               <span>{t.partners.badge}</span>
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight mb-6 leading-tight">
               {language === "fr" ? (
-                <>Nos Estimés <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-amber-600">Partenaires</span></>
+                <>Nos Estimés <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-amber-600">Partenaires</span></>
               ) : (
-                <>Our Esteemed <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-500 to-amber-600">Partners</span></>
+                <>Our Esteemed <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-700 to-amber-600">Partners</span></>
               )}
             </h1>
             <p className="text-lg md:text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -124,8 +124,8 @@ export default function PartnersPage() {
                     className={`relative cursor-pointer group rounded-3xl p-6 transition-all duration-500 ease-out border shadow-sm flex flex-col items-center justify-center
                       ${
                         isActive
-                          ? "bg-white border-yellow-300 ring-4 ring-yellow-50"
-                          : "bg-white border-slate-100 hover:border-yellow-200 hover:shadow-xl hover:-translate-y-1"
+                          ? "bg-white border-blue-400 ring-4 ring-blue-50"
+                          : "bg-white border-slate-100 hover:border-blue-200 hover:shadow-xl hover:-translate-y-1"
                       }
                     `}
                     style={{ minHeight: "280px" }}
@@ -166,7 +166,7 @@ export default function PartnersPage() {
                               target="_blank"
                               rel="noopener noreferrer"
                               onClick={(e) => e.stopPropagation()}
-                              className="mt-2 inline-flex items-center gap-1.5 bg-yellow-500 hover:bg-yellow-600 text-slate-900 px-4 py-2 rounded-full font-bold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm"
+                              className="mt-2 inline-flex items-center gap-1.5 bg-blue-700 hover:bg-blue-700 text-slate-900 px-4 py-2 rounded-full font-bold text-xs transition-all hover:scale-105 active:scale-95 shadow-sm"
                             >
                               {t.common.learnMore}
                               <ArrowRight className="w-3.5 h-3.5" />
@@ -182,7 +182,7 @@ export default function PartnersPage() {
                           initial={{ opacity: 0 }}
                           animate={{ opacity: 1 }}
                           exit={{ opacity: 0 }}
-                          className="text-yellow-600 font-medium text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1"
+                          className="text-blue-700 font-medium text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1"
                         >
                           {t.common.clickToLearnMore}
                           <ArrowRight className="w-4 h-4" />
@@ -198,7 +198,7 @@ export default function PartnersPage() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-24 bg-blue-950 border-t-4 border-yellow-500 relative overflow-hidden">
+      <section className="py-24 bg-blue-950 border-t-4 border-blue-700 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent pointer-events-none" />
         
         <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
@@ -216,7 +216,7 @@ export default function PartnersPage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-900 px-8 py-4 rounded-full font-extrabold text-lg transition-all hover:scale-105 active:scale-95 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider"
+              className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-slate-900 px-8 py-4 rounded-full font-extrabold text-lg transition-all hover:scale-105 active:scale-95 shadow-[8px_8px_0px_0px_rgba(255,255,255,0.1)] hover:shadow-[4px_4px_0px_0px_rgba(255,255,255,0.1)] uppercase tracking-wider"
             >
               {t.common.partnerWithUs}
               <ArrowRight className="w-5 h-5" />

@@ -70,7 +70,7 @@ export default function ProgramCard({ program, lang, t }: { program: any, lang: 
           
           <Link
             href="/donate"
-            className="w-full inline-flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-slate-950 font-bold py-3 px-5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 group/link"
+            className="w-full inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-slate-950 font-bold py-3 px-5 rounded-xl text-xs uppercase tracking-wider transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-0.5 group/link"
           >
             {t.common?.supportPrograms || (lang === "fr" ? "Soutenir Nos Programmes" : "Support Our Programs")}
             <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

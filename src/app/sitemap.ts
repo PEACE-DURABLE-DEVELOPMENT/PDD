@@ -12,7 +12,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/donate",
     "/impact",
     "/partners",
-    "/programs",
     "/projects",
   ];
 
@@ -21,23 +20,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     lastModified: new Date(),
     changeFrequency: "monthly",
     priority: route === "" ? 1.0 : 0.8,
-  }));
-
-  const programIds = [
-    "filter-distribution",
-    "fight-malnutrition",
-    "mediation-and-conflict-resolution",
-    "trauma-healing",
-    "empowered-families-literacy",
-    "vsla",
-    "reserving-forests",
-  ];
-
-  const programMaps: MetadataRoute.Sitemap = programIds.map((id) => ({
-    url: `${baseUrl}/programs/${id}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly",
-    priority: 0.7,
   }));
 
   let blogMaps: MetadataRoute.Sitemap = [];
@@ -53,5 +35,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error generating dynamic blog sitemap:", error);
   }
 
-  return [...staticMaps, ...programMaps, ...blogMaps];
+  return [...staticMaps, ...blogMaps];
 }

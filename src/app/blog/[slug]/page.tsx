@@ -58,22 +58,22 @@ export default async function BlogPostPage({ params }: Props) {
     : "PD";
 
   return (
-    <div className="flex flex-col w-full min-h-screen bg-slate-50/50 selection:bg-yellow-400/20 selection:text-slate-900">
+    <div className="flex flex-col w-full min-h-screen bg-slate-50/50 selection:bg-blue-600/20 selection:text-slate-900">
       {/* Article Header */}
       <section className="relative pt-28 pb-12 px-4 overflow-hidden bg-white border-b border-slate-100">
         {/* Decorative radial blur gradient */}
-        <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-yellow-50/40 rounded-full blur-[100px] -z-10" />
+        <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-blue-50/40 rounded-full blur-[100px] -z-10" />
         
         <div className="container mx-auto max-w-4xl relative z-10">
           <Link
             href="/blog"
             className="group inline-flex items-center gap-2 text-slate-400 hover:text-slate-900 transition-colors font-bold text-xs uppercase tracking-widest mb-8"
           >
-            <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1 text-yellow-500" /> {t.blog.backLink}
+            <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-1 text-blue-700" /> {t.blog.backLink}
           </Link>
           
           <div className="mb-4">
-            <span className="inline-block px-3.5 py-1 rounded-full bg-yellow-50 border border-yellow-100 text-yellow-700 text-xxs font-extrabold uppercase tracking-widest">
+            <span className="inline-block px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-800 text-xxs font-extrabold uppercase tracking-widest">
               {translateCategory(category, lang)}
             </span>
           </div>
@@ -86,7 +86,7 @@ export default async function BlogPostPage({ params }: Props) {
             <div className="flex flex-wrap items-center gap-6">
               {/* Author info */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-yellow-50 flex items-center justify-center text-yellow-600 border border-yellow-100 font-heading font-bold text-xs uppercase shadow-sm">
+                <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center text-blue-700 border border-blue-100 font-heading font-bold text-xs uppercase shadow-sm">
                   {authorInitials}
                 </div>
                 <div>
@@ -141,7 +141,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Article Content */}
       <section className="px-4 pb-24">
         <div className="container mx-auto max-w-3xl">
-          <div className="prose prose-slate max-w-none md:prose-lg first-letter:text-5xl first-letter:font-bold first-letter:text-yellow-500 first-letter:mr-2 first-letter:float-left first-letter:font-heading">
+          <div className="prose prose-slate max-w-none md:prose-lg first-letter:text-5xl first-letter:font-bold first-letter:text-blue-700 first-letter:mr-2 first-letter:float-left first-letter:font-heading">
             {post.content.split('\n\n').map((paragraph, index) => (
               <p key={index} className="mb-6 leading-relaxed text-slate-700 font-sans text-justify text-base md:text-lg">
                 {paragraph}
@@ -156,7 +156,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <Link
               href="/contact"
-              className="bg-yellow-400 text-slate-900 hover:bg-yellow-500 px-8 py-3.5 rounded-full font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap text-sm uppercase tracking-wider"
+              className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-3.5 rounded-full font-bold transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 whitespace-nowrap text-sm uppercase tracking-wider"
             >
               {t.common.supportWork}
             </Link>
