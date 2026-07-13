@@ -59,7 +59,7 @@ export async function getPublications(): Promise<Publication[]> {
         description,
         author,
         attachmentUrl,
-        published: Boolean(f.Published ?? f.published ?? true),
+        published: Boolean(f.Published ?? f.published),
       };
     });
 

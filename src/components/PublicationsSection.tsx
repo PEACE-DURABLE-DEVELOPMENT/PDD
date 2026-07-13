@@ -21,6 +21,17 @@ export default function PublicationsSection({ publications, translations }: Publ
     return null;
   }
 
+  const formatDate = (dateString: string) => {
+    try {
+      const [year, month, day] = dateString.split('-');
+      if (!year || !month || !day) return dateString;
+      const date = new Date(Date.UTC(parseInt(year), parseInt(month) - 1, parseInt(day)));
+      return date.toLocaleDateString('en-US', { timeZone: 'UTC', year: 'numeric', month: 'long', day: 'numeric' });
+    } catch {
+      return dateString;
+    }
+  };
+
   return (
     <section className="py-24 bg-white relative">
       <div className="container mx-auto px-4 relative z-10">
@@ -73,7 +84,7 @@ export default function PublicationsSection({ publications, translations }: Publ
                     </div>
                     <div className="flex items-center text-xs text-slate-500">
                       <Calendar className="w-3.5 h-3.5 mr-2" />
-                      <span>{new Date(pub.date).toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                      <span>{formatDate(pub.date)}</span>
                     </div>
                   </div>
 

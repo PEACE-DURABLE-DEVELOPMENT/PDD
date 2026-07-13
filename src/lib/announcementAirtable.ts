@@ -100,20 +100,20 @@ export async function getAnnouncements(): Promise<Announcement[]> {
         coverImage,
         date:
           f.date || f.Date || new Date().toISOString().split("T")[0],
-        published: Boolean(f.published ?? f.Published ?? f["Published "] ?? true),
+        published: Boolean(f.published ?? f.Published ?? f["Published "] ?? false),
       };
     });
 
     // Sort by date descending in-code
     mapped.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 
-    // Only return published ones, but if none are published yet show all (to handle empty state gracefully)
-    const published = mapped.filter((a) => a.published);
-    if (published.length > 0) return published;
-
-    // If no published ones yet but records exist with no data, return mock
+    // Only return strictly published announcements
+    const publishedAnnouncements = mapped.filter((a) => a.published);
+    
+    // If there is actual data in the table, return the published ones (even if empty, which means none are ticked)
+    // Only return mock data if the table is completely unconfigured/empty of ANY valid row
     const hasRealData = mapped.some((a) => a.title !== "Untitled" && a.body !== "");
-    return hasRealData ? mapped : MOCK_ANNOUNCEMENTS;
+    return hasRealData ? publishedAnnouncements : MOCK_ANNOUNCEMENTS;
   } catch (error) {
     console.error("Error fetching from Announcement Airtable:", error);
     return MOCK_ANNOUNCEMENTS;
