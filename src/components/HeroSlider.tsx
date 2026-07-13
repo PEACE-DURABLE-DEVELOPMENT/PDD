@@ -53,7 +53,7 @@ export default function HeroSlider({
                 alt="PDD Rwanda Community Work"
                 fill
                 priority={index === 0}
-                className={`object-cover object-top transition-transform duration-[5000ms] ease-linear scale-100`}
+                className={`object-cover object-[center_20%] transition-transform duration-[5000ms] ease-linear scale-100`}
                 sizes="100vw"
               />
             </div>
