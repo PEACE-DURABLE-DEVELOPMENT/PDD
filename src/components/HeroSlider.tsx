@@ -12,12 +12,12 @@ interface HeroSliderProps {
 }
 
 const IMAGES = [
-  "/hero.webp",
-  "/peace.webp",
-  "/cons.webp",
-  "/pover.webp",
+  "/team.webp",
   "/fill.webp",
   "/veg.webp",
+  "/hero.webp",
+  "/pover.webp",
+  "/peace.webp",
 ];
 
 export default function HeroSlider({
@@ -31,7 +31,7 @@ export default function HeroSlider({
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % IMAGES.length);
-    }, 10000);
+    }, 5000);
     return () => clearInterval(timer);
   }, []);
 
@@ -53,7 +53,7 @@ export default function HeroSlider({
                 alt="PDD Rwanda Community Work"
                 fill
                 priority={index === 0}
-                className={`object-cover transition-transform duration-[10000ms] ease-linear scale-100`}
+                className={`object-cover transition-transform duration-[5000ms] ease-linear scale-100`}
                 sizes="100vw"
               />
             </div>
