@@ -248,6 +248,10 @@ const translationsRaw = {
       galleryBadge: "Media Gallery",
       galleryTitle: "In the Field",
       gallerySub: "Explore dynamic moments of training, peace discussions, and distribution programs in action.",
+      publicationsBadge: "Resources",
+      publicationsTitle: "Publications & Reports",
+      publicationsSub: "Explore our research, manuals, and impact reports that document our methodologies and results.",
+      download: "Download",
       rippleSteps: {
         step1: {
           title: "Conservation Agriculture",
@@ -696,7 +700,11 @@ const translationsRaw = {
       storiesSub: "Lisez les témoignages personnels de résilience et de croissance des bénéficiaires directs.",
       galleryBadge: "Galerie Média",
       galleryTitle: "Sur le Terrain",
-      gallerySub: "Explorez les moments forts des formations, des discussions sur la paix et des programmes de distribution en action.",
+      gallerySub: "Explorez des moments dynamiques de formation, de discussions de paix et de programmes de distribution en action.",
+      publicationsBadge: "Ressources",
+      publicationsTitle: "Publications & Rapports",
+      publicationsSub: "Explorez nos recherches, manuels et rapports d'impact qui documentent nos méthodologies et résultats.",
+      download: "Télécharger",
       rippleSteps: {
         step1: {
           title: "Agriculture de Conservation",

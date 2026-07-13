@@ -1,7 +1,9 @@
 import StatsCounter from "@/components/StatsCounter";
 import RippleEffectPathway from "@/components/RippleEffectPathway";
 import GalleryFilterable from "@/components/GalleryFilterable";
+import PublicationsSection from "@/components/PublicationsSection";
 import { getGalleryImages } from "@/lib/airtable";
+import { getPublications } from "@/lib/publicationsAirtable";
 import { Sprout, Users, Coins, Droplets, Gift } from "lucide-react";
 import { cookies } from "next/headers";
 import { translations } from "@/lib/translations";
@@ -17,6 +19,7 @@ export default async function ImpactPage() {
   const t = translations[lang];
 
   const galleryImages = await getGalleryImages();
+  const publications = await getPublications();
 
   return (
     <div className="flex flex-col min-h-screen bg-slate-50/50">
@@ -112,6 +115,17 @@ export default async function ImpactPage() {
           </div>
         </div>
       </section>
+
+      {/* Publications Section */}
+      <PublicationsSection 
+        publications={publications} 
+        translations={{
+          badge: t.impact.publicationsBadge,
+          title: t.impact.publicationsTitle,
+          sub: t.impact.publicationsSub,
+          download: t.impact.download,
+        }} 
+      />
 
       {/* Gallery Section ("In the Field") */}
       <section className="py-24 bg-slate-50/50">

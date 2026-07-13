@@ -100,7 +100,7 @@ export async function getAnnouncements(): Promise<Announcement[]> {
         coverImage,
         date:
           f.date || f.Date || new Date().toISOString().split("T")[0],
-        published: Boolean(f.published ?? f.Published ?? true),
+        published: Boolean(f.published ?? f.Published ?? f["Published "] ?? true),
       };
     });
 
