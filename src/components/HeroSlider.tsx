@@ -12,12 +12,13 @@ interface HeroSliderProps {
 }
 
 const IMAGES = [
-  "/team.webp",
-  "/fill.webp",
-  "/veg.webp",
+  "/1.webp",
   "/hero.webp",
+  "/3.webp",
   "/pover.webp",
-  "/peace.webp",
+  "/fill.webp",
+  "/liba.jpeg",
+  "/7.webp",
 ];
 
 export default function HeroSlider({
